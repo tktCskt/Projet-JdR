@@ -48,12 +48,10 @@ int PersonnageScenario::placeOnCell(Area* area, int idCell)
     Cell* cell = &areaCells[idCell];
     if(cell->getB())
     {
-        printf("Impossible de placer le PNJ ici, case occupee\n");
         return -1;
     }
     if(cell->getType() == BLOQUE)
     {
-        printf("Impossible de placer le PNJ ici, type = bloque\n");
         return -2;
     }
     cell->setB(true);
@@ -69,7 +67,6 @@ int PersonnageScenario::placeByCoordonate(Area* area, int x, int y)
 
 int PersonnageScenario::moveOnCell(Area* area, int idCell)
 {
-    /*TODO if cell == null*/
     /*TODO chemin + vitesse + attaques opportunité*/
     this->cell->setB(false);
     int r = this->placeOnCell(area,idCell);

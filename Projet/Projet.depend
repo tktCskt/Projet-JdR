@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1414409266 source:c:\users\xavier\documents\projet\main.cpp
+1414431293 source:c:\users\xavier\documents\projet\main.cpp
 	<iostream>
 	"Cell.h"
 	"Area.h"
@@ -16,10 +16,10 @@
 	"Area.h"
 	<list>
 
-1414410555 c:\users\xavier\documents\projet\include\area.h
+1414427442 c:\users\xavier\documents\projet\include\area.h
 	"Cell.h"
 
-1413889801 source:c:\users\xavier\documents\projet\src\area.cpp
+1414410555 source:c:\users\xavier\documents\projet\src\area.cpp
 	"Area.h"
 
 1413814353 c:\users\xavier\documents\projet\include\cell.h
@@ -32,7 +32,7 @@
 
 1413810992 c:\users\xavier\documents\projet\include\personnage.h
 
-1414253564 source:c:\users\xavier\documents\projet\src\personnagescenario.cpp
+1414427853 source:c:\users\xavier\documents\projet\src\personnagescenario.cpp
 	"PersonnageScenario.h"
 	<stdio.h>
 
@@ -56,4 +56,9 @@
 	"Monstre.h"
 	"Area.h"
 	"Cell.h"
+
+1414432098 source:c:\users\xavier\documents\projet\src\discussion.cpp
+	"Discussion.h"
+
+1414432778 c:\users\xavier\documents\projet\include\discussion.h
 

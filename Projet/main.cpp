@@ -15,15 +15,13 @@ using namespace std;
 
 int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
 bool adjacence(Area*, int, int);
+int menu (PersonnageScenario*, Area*, PNJScenario**);
+int menu_deplacer (PersonnageScenario*, Area*);
+int menu_interraction (PersonnageScenario*, PNJScenario**);
 
 int main()
 {
-    /*TODO = Creer un scénario de deux zones avec des monstres et un PJ qu'on déplace + affichage*/
-    /*TODO Constructeurs/Destructeurs*/
-    /*TODO Renommer PNJ.h*/
-    /*Remplacer **cell par *cell*/
     //Creer cellules
-
     int i,j,n = 0;
     Cell** cellules;
     cellules = (Cell**)(malloc(sizeof(Cell*)*NB_ZONES));
@@ -69,7 +67,6 @@ int main()
     /*Test PNJ*/
     printf("Init PNJ\n");
     PNJScenario** pnjs = (PNJScenario**)(malloc(sizeof(PNJScenario*)*2));
-    PNJScenario** pnjs2 = (PNJScenario**)(malloc(sizeof(PNJScenario*)*2));
     for(n=0; n<2; n++)
     {
         pnjs[n] = new PNJScenario(&areas[0],n*TAILLE_ZONE_X+1);
@@ -79,80 +76,12 @@ int main()
     pnjs[1]->setName("Vieille dame trop mysterieuse");
     /*Test Personnage*/
     printf("Init personnage\n");
-    PersonnageScenario* ganjoTest = (PersonnageScenario*)(malloc(sizeof(Personnage)));
+    PersonnageScenario* ganjoTest = (PersonnageScenario*)(malloc(sizeof(PersonnageScenario)));
     ganjoTest->placeOnCell(&areas[0], 0);
-    bool fin = false;
+    int fin = 0;
     while(!fin)
     {
-        printf("ganjotest->idCell = %d\n",ganjoTest->getCell()->getId());
-        int r = getNPCNearTo(ganjoTest->getArea(),ganjoTest->getCell()->getId(),pnjs,pnjs2);
-        printf("%d pnjs a cote (dans la meme zone ftm)\n", r);
-        for(n=0; n<r; n++)
-        {
-            printf("%s\n", pnjs2[n]->getName());
-        }
-        int choice;
-        printf("1)Avancer X\n2)Reculer X\n3)Avancer Y\n4)Reculer Y\n5)Changer zone\n6)Etat\n7)Fin\n");
-        scanf("%d",&choice);
-        switch(choice)
-        {
-        case 1 :
-            if(!(ganjoTest->getCell()->getX() == TAILLE_ZONE_X-1))
-            {
-                 ganjoTest->moveByCoordonate(ganjoTest->getArea(),ganjoTest->getCell()->getX()+1,ganjoTest->getCell()->getY());
-                 printf("Vous avez avance horizontalement.\n");
-            }
-            else
-            {
-                printf("Vous ne pouvez pas avancer, ganjoTest->idCell=%d\n",ganjoTest->getCell()->getId());
-            }
-            break;
-        case 2 :
-            if(!(ganjoTest->getCell()->getX() == 0))
-            {
-                 ganjoTest->moveByCoordonate(ganjoTest->getArea(),ganjoTest->getCell()->getX()-1,ganjoTest->getCell()->getY());
-                 printf("Vous avez recule horizontalement.\n");
-            }
-            else
-            {
-                printf("Vous ne pouvez pas reculer, ganjoTest->idCell=%d\n",ganjoTest->getCell()->getId());
-            }
-            break;
-        case 3 :
-            if(!(ganjoTest->getCell()->getY() == TAILLE_ZONE_Y-1))
-            {
-                 ganjoTest->moveByCoordonate(ganjoTest->getArea(),ganjoTest->getCell()->getX(),ganjoTest->getCell()->getY()+1);
-                 printf("Vous avez avance verticalement.\n");
-            }
-            else
-            {
-                printf("Vous ne pouvez pas avancer, ganjoTest->idCell=%d\n",ganjoTest->getCell()->getId());
-            }
-            break;
-        case 4 :
-            if(!(ganjoTest->getCell()->getY() == 0))
-            {
-                 ganjoTest->moveByCoordonate(ganjoTest->getArea(),ganjoTest->getCell()->getX(),ganjoTest->getCell()->getY()-1);
-                 printf("Vous avez recule verticalement.\n");
-            }
-            else
-            {
-                printf("Vous ne pouvez pas reculer, ganjoTest->idCell=%d\n",ganjoTest->getCell()->getId());
-            }
-            break;
-        case 5 :
-            ganjoTest->setArea(&(areas[(ganjoTest->getArea()->getId()+1)%NB_ZONES]));
-            ganjoTest->setCell(ganjoTest->getArea()->getCells());
-            printf("Vous avez change de zone\n");
-            break;
-        case 6 :
-            printf("Id de la zone : %d\nNom de la zone : %s\nDescription de la zone :%s\n",ganjoTest->getArea()->getId(),ganjoTest->getArea()->getName(),ganjoTest->getArea()->getDescription());
-            break;
-        default :
-            fin = true;
-            break;
-        }
-
+        fin = menu(ganjoTest,areas,pnjs);
     }
     //Liberer PNJ
 
@@ -182,7 +111,6 @@ int getNPCNearTo(Area* area, int idCell, PNJScenario** npcList, PNJScenario** np
     int r = 0;
     for(i=0; i<n; i++)
     {
-        /*FINIR CA*/
         if(npcList[i]->getArea() == area)
         {
             if(adjacence(area, idCell, npcList[i]->getCell()->getId()))
@@ -204,4 +132,143 @@ bool adjacence(Area* area, int idCell1, int idCell2)
         return false;
     }
     return true;
+}
+
+int menu (PersonnageScenario* PJ, Area* areas, PNJScenario** npcList)
+{
+        int choice;
+        printf("1)Se deplacer\n2)Agir sur les PNJs\n3)Fin\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+        case 1 :
+            menu_deplacer(PJ,areas);
+            break;
+        case 2 :
+            menu_interraction(PJ,npcList);
+            break;
+        default :
+            return 1;
+            break;
+        }
+        return 0;
+}
+
+int menu_deplacer (PersonnageScenario* PJ, Area* areas)
+{
+    int choice;
+    printf("Deplacement :\n1)Avancer horizontalement\n2)Reculer Horizontalement\n3)Avancer verticalement\n4)Reculer vreticalement\n5)Changer de zone\n");
+    scanf("%d",&choice);
+     switch(choice)
+        {
+        case 1 :
+            if(!(PJ->getCell()->getX() == TAILLE_ZONE_X-1))
+            {
+                 if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()+1,PJ->getCell()->getY()) == 0)
+                 {
+                     printf("Vous avez avance horizontalement.\n");
+                 }
+                 else
+                 {
+                     printf("Erreur deplacement\n");
+                 }
+            }
+            else
+            {
+                printf("Vous ne pouvez pas avancer, PJ->idCell=%d\n",PJ->getCell()->getId());
+            }
+            break;
+        case 2 :
+            if(!(PJ->getCell()->getX() == 0))
+            {
+                if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()-1,PJ->getCell()->getY()) == 0)
+                {
+                    printf("Vous avez recule horizontalement.\n");
+                }
+                else
+                {
+                      printf("Erreur deplacement\n");
+                }
+            }
+            else
+            {
+                printf("Vous ne pouvez pas reculer, PJ->idCell=%d\n",PJ->getCell()->getId());
+            }
+            break;
+        case 3 :
+            if(!(PJ->getCell()->getY() == TAILLE_ZONE_Y-1))
+            {
+                if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX(),PJ->getCell()->getY()+1) == 0)
+                {
+                    printf("Vous avez avance verticalement.\n");
+                }
+                else
+                {
+                    printf("Erreur deplacement\n");
+                }
+            }
+            else
+            {
+                printf("Vous ne pouvez pas avancer, PJ->idCell=%d\n",PJ->getCell()->getId());
+            }
+            break;
+        case 4 :
+            if(!(PJ->getCell()->getY() == 0))
+            {
+                if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX(),PJ->getCell()->getY()-1) == 0)
+                {
+                    printf("Vous avez recule verticalement.\n");
+                }
+                else
+                {
+                    printf("Erreur deplacement\n");
+                }
+            }
+            else
+            {
+                printf("Vous ne pouvez pas reculer, PJ->idCell=%d\n",PJ->getCell()->getId());
+            }
+            break;
+        case 5 :
+            PJ->setArea(&(areas[(PJ->getArea()->getId()+1)%NB_ZONES]));
+            PJ->setCell(PJ->getArea()->getCells());
+            printf("Vous avez change de zone\n");
+            break;
+        }
+    return 0;
+}
+
+int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
+{
+    PNJScenario** pnjs2 = (PNJScenario**)(malloc(sizeof(PNJScenario*)));
+    int x,y;
+    PJ->getArea()->getCoordonate(PJ->getCell()->getId(),&x,&y);
+    printf("Cell id = %d, x = %d, y = %d\n",PJ->getCell()->getId(),x,y);
+    int r = getNPCNearTo(PJ->getArea(),PJ->getCell()->getId(),npcList,pnjs2);
+    printf("%d pnjs a cote\n", r);
+    int n = 0;
+    for(n=0; n<r; n++)
+    {
+        pnjs2[n]->getArea()->getCoordonate(pnjs2[n]->getCell()->getId(),&x,&y);
+        printf("%s sur la cellule id=%d,x=%d,y=%d\n", pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
+    }
+    int nPNJ = 0;
+    printf("Interragir avec quel PNJ ?");
+    scanf("%d",&nPNJ);
+    /*gerer erreur*/
+    printf("Que faire sur %s?\n1)Attaquer\n2)Discuter\n3)Examiner\n",pnjs2[nPNJ]->getName());
+    int choice = 0;
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1 :
+            break;
+        case 2 :
+            break;
+        case 3 :
+            break;
+        default :
+            break;
+    }
+    return 0;
 }
