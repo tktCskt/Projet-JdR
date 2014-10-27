@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1414409266 source:c:\users\xavier\documents\projet\main.cpp
+	<iostream>
+	"Cell.h"
+	"Area.h"
+	"PersonnageScenario.h"
+	"PNJ.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1413647780 source:c:\users\xavier\documents\projet\src\scenario.cpp
+	"Scenario.h"
+
+1413810446 c:\users\xavier\documents\projet\include\scenario.h
+	"Area.h"
+	<list>
+
+1414410555 c:\users\xavier\documents\projet\include\area.h
+	"Cell.h"
+
+1413889801 source:c:\users\xavier\documents\projet\src\area.cpp
+	"Area.h"
+
+1413814353 c:\users\xavier\documents\projet\include\cell.h
+
+1413815411 source:c:\users\xavier\documents\projet\src\cell.cpp
+	"Cell.h"
+
+1413810916 source:c:\users\xavier\documents\projet\src\personnage.cpp
+	"Personnage.h"
+
+1413810992 c:\users\xavier\documents\projet\include\personnage.h
+
+1414253564 source:c:\users\xavier\documents\projet\src\personnagescenario.cpp
+	"PersonnageScenario.h"
+	<stdio.h>
+
+1414253544 c:\users\xavier\documents\projet\include\personnagescenario.h
+	"Personnage.h"
+	"Cell.h"
+	"Area.h"
+
+1413887184 source:c:\users\xavier\documents\projet\src\monstre.cpp
+	"Monstre.h"
+
+1414407756 c:\users\xavier\documents\projet\include\monstre.h
+	<iostream>
+	<string>
+
+1414407738 source:c:\users\xavier\documents\projet\src\pnj.cpp
+	"PNJ.h"
+	"stdio.h"
+
+1414406799 c:\users\xavier\documents\projet\include\pnj.h
+	"Monstre.h"
+	"Area.h"
+	"Cell.h"
+
