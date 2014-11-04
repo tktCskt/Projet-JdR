@@ -6,18 +6,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Guard.h>
 
 using namespace std;
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
 #define TAILLE_ZONE_Y 10
+#define NB_NPC_MAX 10
 
 int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
 bool adjacence(Area*, int, int);
 int menu (PersonnageScenario*, Area*, PNJScenario**);
 int menu_deplacer (PersonnageScenario*, Area*);
 int menu_interraction (PersonnageScenario*, PNJScenario**);
+void discussion(PNJScenario* npc);
+void discussionQuest();
 
 /**
   * The Epic Quest to kill the Rat King, now available on your computer!
@@ -72,17 +76,16 @@ int main()
         areas[n].setCells(cellules[n]);
     }
 
-    /* We create a Rat and an old Lady which give the quest to kill the King Rat */
+    /* We create a Rat and an guard which give the quest to kill the King Rat */
     printf("Initialisation PNJ...\n");
-    PNJScenario** pnjs = (PNJScenario**)(malloc(sizeof(PNJScenario*)*2));
-    for(n=0; n<2; n++)
-    {
-        pnjs[n] = new PNJScenario(&areas[0],n*TAILLE_ZONE_X+1);
-        printf("id PNJ[%d] = %d, nbPNJ = %d\n", n, pnjs[n]->getId(), pnjs[n]->nbNPC);
-    }
+    PNJScenario** pnjs = (PNJScenario**)(malloc(sizeof(PNJScenario*)*NB_NPC_MAX));
+    pnjs[0] = new PNJScenario(&areas[0],1);
+    pnjs[1] = new Guard(&areas[0],11);
+    pnjs[2] = new Guard(&areas[0],21);
     pnjs[0]->setName("King Rat");
-    pnjs[1]->setName("Vieille dame trop mysterieuse");
-
+    pnjs[1]->setName("Garde un peu nul");
+    pnjs[2]->setName("Garde trop baleze");
+    pnjs[1]->discuss = discussionQuest;
     /* We create a Personnage which will have to kill the King Rat to free the world from rat domination */
     printf("Initialisation personnage...\n\n");
     PersonnageScenario* ganjoTest = (PersonnageScenario*)(malloc(sizeof(PersonnageScenario)));
@@ -276,19 +279,17 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
   */
 int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
 {
-    PNJScenario** pnjs2 = (PNJScenario**)(malloc(sizeof(PNJScenario*)));
-
+    PNJScenario** pnjs2 = (PNJScenario**)(malloc(sizeof(PNJScenario*)*NB_NPC_MAX));
     int x,y;
     PJ->getArea()->getCoordonate(PJ->getCell()->getId(),&x,&y);
     printf("Cell id = %d, x = %d, y = %d\n\n",PJ->getCell()->getId(),x,y);
-
+    //bug ici apres déplacement + 3 "agir"
     int r = getNPCNearTo(PJ->getArea(),PJ->getCell()->getId(),npcList,pnjs2);
     printf("%d pnjs a cote\n\n", r);
-
     for(int n=0; n<r; n++)
     {
         pnjs2[n]->getArea()->getCoordonate(pnjs2[n]->getCell()->getId(),&x,&y);
-        printf("%s sur la cellule id=%d,x=%d,y=%d\n", pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
+        printf("%d)%s sur la cellule id=%d,x=%d,y=%d\n",n, pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
     }
     printf("\n");
 
@@ -305,6 +306,7 @@ int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
         case 1 :
             break;
         case 2 :
+            discussion(pnjs2[nPNJ]);
             break;
         case 3 :
             break;
@@ -312,4 +314,26 @@ int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
             break;
     }
     return 0;
+}
+
+void discussion(PNJScenario* npc)
+{
+    npc->discuss();
+}
+
+void discussionQuest()
+{
+    int choice;
+    printf("Slt tapa un peo stplz ?\n");
+    printf("1)Donner 1 peo\n");
+    printf("2)Refuser\n");
+    scanf("%d", &choice);
+    switch(choice)
+    {
+    case 1 :
+        printf("ty, tu le ra stp.. jte donere 1 tresor apre\n");
+        break;
+    default :
+        printf("kastoi tupu\n");
+    }
 }

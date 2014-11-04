@@ -8,13 +8,15 @@ PNJScenario::PNJScenario()
     this->cell = NULL;
     this->area = NULL;
     this->id = nbNPC;
+    this->discuss = npcDiscussion;
     this->nbNPC++;
 }
 
 PNJScenario::PNJScenario(Area* newArea, int idCell)
 {
     this->placeOnCell(newArea,idCell);
-    this->id = nbNPC;
+    this->id = nbNPC;;
+    this->discuss = npcDiscussion;
     this->nbNPC++;
 }
 
@@ -140,3 +142,5 @@ int PNJScenario::moveByCoordonate(Area* area, int x, int y)
 {
     return moveOnCell(area,y*area->getXMax()+x);
 }
+
+

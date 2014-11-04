@@ -4,6 +4,7 @@
 #include "Monstre.h"
 #include "Area.h"
 #include "Cell.h"
+#include <stdio.h>
 
 /**
   * This is Monstre with coordinates, which allows it to move and interact within the scenario
@@ -31,6 +32,7 @@ class PNJScenario : public Monstre
         int moveOnCell(Area* area, int idCell);
         int moveByCoordonate(Area* area, int x, int y);
 
+        void (*discuss)();
         static int nbNPC;
 
     private:
@@ -40,4 +42,8 @@ class PNJScenario : public Monstre
 
 };
 
+inline void npcDiscussion()
+{
+    printf("Bonjour je suis un PNJ\n");
+}
 #endif // PNJ_H

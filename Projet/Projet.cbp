@@ -36,6 +36,7 @@
 		</Compiler>
 		<Unit filename="include/Area.h" />
 		<Unit filename="include/Cell.h" />
+		<Unit filename="include/Guard.h" />
 		<Unit filename="include/Monstre.h" />
 		<Unit filename="include/PNJ.h" />
 		<Unit filename="include/Personnage.h" />
@@ -44,6 +45,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Area.cpp" />
 		<Unit filename="src/Cell.cpp" />
+		<Unit filename="src/Guard.cpp" />
 		<Unit filename="src/Monstre.cpp" />
 		<Unit filename="src/PNJ.cpp" />
 		<Unit filename="src/Personnage.cpp" />
