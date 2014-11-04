@@ -5,29 +5,36 @@
 #define NORMAL 1
 #define DIFFICILE 2
 #define BLOQUE 3
+
+/**
+  * A cell component of an Area
+  * if bool b is #true, the cell is occupied; else it is not
+  * If type is 1, the cell is normal; if it is 2, the cell is difficult to access; if it is 3, the cell can't be accessed
+  */
 class Cell
 {
     public:
         Cell();
         virtual ~Cell();
-        void setX(int x);
+
         int getX();
-        void setY(int y);
         int getY();
-        void setId(int id);
         int getId();
-        void setType(int type);
         int getType();
-        void setB(bool b);
         bool getB();
-    protected:
+
+        void setX(int x);
+        void setY(int y);
+        void setId(int id);
+        void setType(int type);
+        void setB(bool b);
+
     private:
         int x;
         int y;
         int id;
-        int type;
-        // case occupée ou non
-        bool b;
+        int type;   // What kind of cell it is (see #define above)
+        bool b;     // Whether the Cell is busy or not
 };
 
 #endif // CELL_H

@@ -3,23 +3,28 @@
 #include "Cell.h"
 #include "Area.h"
 
-
+/**
+  * This is Personnage with coordinates, which allows it to move and interact within the scenario
+  */
 class PersonnageScenario : public Personnage
 {
     public:
         PersonnageScenario();
         virtual ~PersonnageScenario();
-        void setId(int newId);
+
         int getId();
-        void setCell(Cell* cell);
         Cell* getCell();
-        void setArea(Area* area);
         Area* getArea();
+
+        void setId(int newId);
+        void setCell(Cell* cell);
+        void setArea(Area* area);
+
         int placeOnCell(Area* area, int idCell);
         int placeByCoordonate(Area* area, int x, int y);
         int moveOnCell(Area* area, int idCell);
         int moveByCoordonate(Area* area, int x, int y);
-    protected:
+
     private:
         int id;
         Cell* cell;

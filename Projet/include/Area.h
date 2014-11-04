@@ -3,26 +3,32 @@
 #define AREA_H
 
 
+/**
+  * An Area is composed of xMax*yMax Cells
+  */
 class Area
 {
     public:
         Area();
         virtual ~Area();
-        void setId(int id);
+
         int getId();
-        void setXMax(int xMax);
         int getXMax();
-        void setYMax(int yMax);
         int getYmax();
-        void setName(char* name);
         char* getName();
-        void setDescription(char* description);
         char* getDescription();
-        void setCells(Cell* Cells);
         void getCoordonate(int idCell, int* x, int* y);
+
+        void setId(int id);
+        void setXMax(int xMax);
+        void setYMax(int yMax);
+        void setName(char* name);
+        void setDescription(char* description);
+        void setCells(Cell* Cells);
         Cell* getCells();
+
         /*TODO generer cellules+Id cellules avec xMax/yMax*/
-    protected:
+
     private:
         int id;
         int xMax;

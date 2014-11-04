@@ -10,19 +10,11 @@ Area::~Area()
     //dtor
 }
 
-void Area::setId(int id)
-{
-    this->id = id;
-}
+// ********** Getters **********
 
 int Area::getId()
 {
     return this->id;
-}
-
-void Area::setXMax(int xMax)
-{
-    this->xMax = xMax;
 }
 
 int Area::getXMax()
@@ -30,19 +22,9 @@ int Area::getXMax()
     return this->xMax;
 }
 
-void Area::setYMax(int yMax)
-{
-    this->yMax = yMax;
-}
-
 int Area::getYmax()
 {
     return this->yMax;
-}
-
-void Area::setName(char* name)
-{
-    this->name = name;
 }
 
 char* Area::getName()
@@ -50,19 +32,9 @@ char* Area::getName()
     return this->name;
 }
 
-void Area::setDescription(char* description)
-{
-    this->description = description;
-}
-
 char* Area::getDescription()
 {
     return this->description;
-}
-
-void Area::setCells(Cell* Cells)
-{
-    this->listCells = Cells;
 }
 
 Cell* Area::getCells()
@@ -74,4 +46,36 @@ void Area::getCoordonate(int idCell, int* x, int* y)
 {
     *x = idCell%this->getXMax();
     *y = idCell/this->getXMax();
+}
+
+// ********** Setters **********
+
+void Area::setId(int id)
+{
+    this->id = id;
+}
+
+void Area::setXMax(int xMax)
+{
+    this->xMax = xMax;
+}
+
+void Area::setYMax(int yMax)
+{
+    this->yMax = yMax;
+}
+
+void Area::setName(char* name)
+{
+    this->name = name;
+}
+
+void Area::setDescription(char* description)
+{
+    this->description = description;
+}
+
+void Area::setCells(Cell* Cells)
+{
+    this->listCells = Cells;
 }
