@@ -3,18 +3,25 @@
 
 #include <iostream>
 #include <string>
+#include "loot.h"
 class Monstre
 {
     public:
         Monstre();
         virtual ~Monstre();
+        char* getName();
+        void setName(char* n);
+        float getLevel();
+        void setLevel( float l);
+        int getXp();
+        void setXp(int x);
     protected:
-            char* name;
+    int iD_monstre;
+    char* name;
+    float level;
+    int xp;
     private:
-    int idMonstre;
 
-    int level;
-    int XP;
 };
 
 #endif // MONSTRE_H

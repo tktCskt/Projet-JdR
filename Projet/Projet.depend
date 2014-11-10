@@ -129,3 +129,163 @@
 	"Guard.h"
 	<stdio.h>
 
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\main.cpp
+	<iostream>
+	"Cell.h"
+	"Area.h"
+	"PersonnageScenario.h"
+	"PNJ.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<Guard.h>
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\cell.h
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\area.h
+	"Cell.h"
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\personnagescenario.h
+	"Personnage.h"
+	"Cell.h"
+	"Area.h"
+
+1415617307 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\personnage.h
+	<iostream>
+	<string>
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\pnj.h
+	"Monstre.h"
+	"Area.h"
+	"Cell.h"
+	<stdio.h>
+
+1415615815 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\monstre.h
+	<iostream>
+	<string>
+	"loot.h"
+
+1415612453 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\loot.h
+	"objet.h"
+	"monstre.h"
+	<iostream>
+	<string>
+
+1415615116 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\objet.h
+	<iostream>
+	<string>
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\guard.h
+	"PNJ.h"
+
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\area.cpp
+	"Area.h"
+
+1415612543 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\bonus.cpp
+	"bonus.h"
+	"objet.h"
+	"talent.h"
+
+1415612529 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\bonus.h
+	"objet.h"
+	"talent.h"
+	<iostream>
+	<string>
+
+1415612491 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\talent.h
+
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\cell.cpp
+	"Cell.h"
+
+1415614282 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\classe.cpp
+	"classe.h"
+	"evolution.h"
+
+1415614215 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\classe.h
+	"evolution.h"
+	<iostream>
+	<string>
+
+1415612561 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\evolution.h
+	"classe.h"
+	"talent.h"
+	<iostream>
+	<string>
+
+1415614386 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\competence.cpp
+	"competence.h"
+
+1415614355 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\competence.h
+
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\discussion.cpp
+	"Discussion.h"
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\discussion.h
+
+1415614398 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\evolution.cpp
+	"evolution.h"
+	"classe.h"
+	"talent.h"
+
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\guard.cpp
+	"Guard.h"
+	<stdio.h>
+
+1415614419 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\inventaire.cpp
+	"inventaire.h"
+	"personnage.h"
+	"objet.h"
+
+1415614406 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\inventaire.h
+	"personnage.h"
+	"objet.h"
+	<iostream>
+	<string>
+
+1415614431 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\loot.cpp
+	"loot.h"
+	"objet.h"
+	"monstre.h"
+
+1415615803 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\monstre.cpp
+	"monstre.h"
+
+1415615017 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\objet.cpp
+	"objet.h"
+
+1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\pnj.cpp
+	"PNJ.h"
+	"stdio.h"
+
+1415617213 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\personnage.cpp
+	"personnage.h"
+	<string>
+
+1415610514 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\personnagescenario.cpp
+	"PersonnageScenario.h"
+	<stdio.h>
+
+1415617488 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\race.cpp
+	"race.h"
+
+1415617499 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\race.h
+	<iostream>
+	<string>
+
+1415610514 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\scenario.cpp
+	"Scenario.h"
+
+1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\scenario.h
+	"Area.h"
+	<list>
+
+1415617511 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\talent.cpp
+	"talent.h"
+
+1415617536 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\utilisateur.cpp
+	"utilisateur.h"
+
+1415617524 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\utilisateur.h
+	<iostream>
+	<string>
+
