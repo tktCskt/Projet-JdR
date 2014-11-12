@@ -18,6 +18,9 @@ class Classe
        void setDescription(char* desc);
        void setDv( int d);
        void setGain_comp(int g);
+
+       static int nbClasses;
+       static Classe* listClasses;
     protected:
     private:
     int iD_classe;

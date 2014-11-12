@@ -16,10 +16,11 @@ class Monstre
         int getXp();
         void setXp(int x);
     protected:
-    int iD_monstre;
-    char* name;
-    float level;
-    int xp;
+        int iD_monstre;
+        char* name;
+        float level;
+        int xp;
+        int speed; //en case
     private:
 
 };

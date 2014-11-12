@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "Classe.h"
+#include "Race.h"
+
 class Personnage
 {
      public:
@@ -52,6 +55,19 @@ class Personnage
         void setBba(int b);
         int getInit();
         void setInit(int i);
+
+        Race getRace();
+        int setRace(char* newRace, char* bonus);
+        int setRace(Race newRace, char* bonus);
+
+        Classe getClasse();
+        int setClasse(char* newClasse);
+        int setClasse(Classe newClasse);
+
+        int setAbilities(char* mode, int newAbilities[6]);
+
+
+
     int XP;
     int table_classe[20][20];// id_classe, niveau
     int iD_perso;
@@ -76,8 +92,11 @@ class Personnage
     int ca_temp;
     int bba;
     int init;
+    int speed; //en case
     int** table_comp;// id_comp, points
     protected:
+        Race race;
+        Classe classe;
     private:
 
 };

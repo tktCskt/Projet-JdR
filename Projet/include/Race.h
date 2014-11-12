@@ -8,10 +8,13 @@ class Race
      public:
         Race();
         virtual ~Race();
-        char* getNom();
-        void setNom(char* n);
+        char* getName();
+        void setName(char* n);
         char* getDescription();
         void setDescription(char* desc);
+
+        static int nbRaces;
+        static Race* listRaces;
     protected:
     private:
     int iD_race;

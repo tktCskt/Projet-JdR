@@ -1,5 +1,8 @@
 #include "personnage.h"
 #include <string>
+#include <string.h>
+#include <stdlib.h>
+
 Personnage::Personnage()
 {
     //ctor
@@ -191,3 +194,101 @@ void Personnage::setId_race(int r)
     id_race = r;
 }
 
+/**/
+
+Race Personnage::getRace()
+{
+    return this->race;
+}
+
+int Personnage::setRace(char* newRace, char* bonus)
+{
+    int i;
+    for(i=0; i<(int)(Race::nbRaces); i++)
+    {
+        if(strcmp(newRace,Race::listRaces[i].getName()))
+        {
+            this->setRace(Race::listRaces[i],bonus);
+        }
+    }
+    return 0;
+}
+
+int Personnage::setRace(Race newRace, char* bonus)
+{
+    this->race = newRace;
+
+    if (bonus != NULL)
+    {
+        if(strcmp(bonus,"strength"))
+        {
+            this->force+=2;
+        }
+        else if(strcmp(bonus,"dexterity"))
+        {
+            this->dexterite+=2;
+        }
+        else if(strcmp(bonus,"constitution"))
+        {
+            this->constitution+=2;
+        }
+        else if(strcmp(bonus,"intelligence"))
+        {
+            this->intelligence+=2;
+        }
+        else if(strcmp(bonus,"wisdom"))
+        {
+            this->sagesse+=2;
+        }
+        else if(strcmp(bonus,"charisma"))
+        {
+            this->charisme+=2;
+        }
+        else
+        {
+            free(bonus);
+            return -1;
+        }
+
+        free(bonus);
+    }
+
+    return 0;
+}
+
+Classe Personnage::getClasse()
+{
+        return this->classe;
+}
+
+int Personnage::setClasse(char* newClasse)
+{
+    int i;
+    for(i=0; i<Classe::nbClasses; i++)
+    {
+        if(strcmp(newClasse,Classe::listClasses[i].getName()))
+        {
+            this->setClasse(Classe::listClasses[i]);
+        }
+    }
+    return 0;
+}
+
+int Personnage::setClasse(Classe newClasse)
+{
+    this->classe = newClasse;
+    return 0;
+}
+
+int Personnage::setAbilities(char* mode, int newAbilities[6])
+{
+    //TODO mode + verifs
+    this->force = newAbilities[0];
+    this->dexterite = newAbilities[1];
+    this->constitution = newAbilities[2];
+    this->intelligence = newAbilities[3];
+    this->sagesse = newAbilities[4];
+    this->charisme = newAbilities[5];
+
+    return 0;
+}

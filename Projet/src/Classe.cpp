@@ -1,5 +1,10 @@
 #include "classe.h"
 #include "evolution.h"
+#include "stdlib.h"
+
+int Classe::nbClasses = 0;
+Classe* Classe::listClasses = (Classe*)(malloc(sizeof(Classe)*50));
+
 Classe::Classe()
 {
     //ctor

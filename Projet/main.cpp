@@ -7,6 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Guard.h>
+#include "Race.h"
+#include "Classe.h"
+#include "Personnage.h"
 
 using namespace std;
 
@@ -22,13 +25,15 @@ int menu_deplacer (PersonnageScenario*, Area*);
 int menu_interraction (PersonnageScenario*, PNJScenario**);
 void discussion(PNJScenario* npc);
 void discussionQuest();
-
+Personnage* newCharacter();
 /**
   * The Epic Quest to kill the Rat King, now available on your computer!
   * @return 1 Once it's ended
   */
 int main()
 {
+    /**/
+    /**/
     // ********** Initialisation Campagne **********
 
     /* We create NB_ZONES table of Cells according to the size of the Areas TAILLE_ZONE_X*TAILLE_ZONE_Y
@@ -336,4 +341,48 @@ void discussionQuest()
     default :
         printf("kastoi tupu\n");
     }
+}
+
+Personnage* newCharacter()
+{
+    char* race = (char*)(malloc(sizeof(char)*50));
+    char* classe = (char*)(malloc(sizeof(char)*50));
+    char* bonus = NULL;
+    int abilities[6];
+
+    Personnage* newCharacter = new Personnage();
+
+    printf("Classe ?\n");
+    scanf("%s", classe);
+    newCharacter->setClasse(classe);
+    printf("Strength ?\n");
+    scanf("%d", abilities[0]);
+    printf("Dexterity ?\n");
+    scanf("%d", abilities[1]);
+    printf("Constitution ?\n");
+    scanf("%d", abilities[2]);
+    printf("Intelligence ?\n");
+    scanf("%d", abilities[3]);
+    printf("Wisdom ?\n");
+    scanf("%d", abilities[4]);
+    printf("Charisma ?\n");
+    scanf("%d", abilities[5]);
+    newCharacter->setAbilities(NULL,abilities);
+    printf("Skills are not implemented yet\n");
+    printf("Race ?\n");
+    scanf("%s", race);
+    if(strcmp(race,"demielfe") || strcmp(race,"demiorc") || strcmp(race,"humain"))
+    {
+        bonus = (char*)(malloc(sizeof(char)*50));
+        printf("Bonus ?\n");
+        scanf("%s", bonus);
+    }
+    newCharacter->setRace(race,bonus);
+    printf("Feats are not implemented yet\n");
+
+    free(race);
+    free(classe);
+
+    printf("Fin !");
+    return newCharacter;
 }

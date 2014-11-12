@@ -1,4 +1,8 @@
 #include "race.h"
+#include <stdlib.h>
+
+int Race::nbRaces = 0;
+Race* Race::listRaces = (Race*)(malloc(sizeof(Race)*50));
 
 Race::Race()
 {
@@ -10,7 +14,7 @@ Race::~Race()
     //dtor
 }
 // getter possible
-char *Race::getNom()
+char *Race::getName()
 {
     return nom;
 }
@@ -25,7 +29,7 @@ char *Race::getDescription()
 
 //setter possible
 
-void Race::setNom(char* n)
+void Race::setName(char* n)
 {
     nom = n;
 }
