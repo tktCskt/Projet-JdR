@@ -7,12 +7,20 @@ class Competence
     public:
         Competence();
         virtual ~Competence();
+
+        int id;
+        static int nbSkills;
+        static Competence** listSkills;
+
+        int setName(char* newName);
+        int setDescription(char* newDescription);
+        char* getName();
         char* getDescription();
-        void setDescription(char* desc);
+
     protected:
+        char* name;
+        char* description;
     private:
-    int id_competence;
-    char* description;
 };
 
 #endif // COMPETENCE_H

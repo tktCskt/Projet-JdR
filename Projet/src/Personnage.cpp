@@ -268,10 +268,10 @@ int Personnage::setClasse(char* newClasse)
     {
         if(strcmp(newClasse,Classe::listClasses[i].getName()))
         {
-            this->setClasse(Classe::listClasses[i]);
+            return this->setClasse(Classe::listClasses[i]);
         }
     }
-    return 0;
+    return -1;
 }
 
 int Personnage::setClasse(Classe newClasse)

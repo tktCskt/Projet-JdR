@@ -1,7 +1,8 @@
 #ifndef INIT_H_INCLUDED
 #define INIT_H_INCLUDED
 
-void initRaces();
-void initFeats();
+int initRaces();
+int initFeats();
+int initSkills();
 
 #endif // INIT_H_INCLUDED

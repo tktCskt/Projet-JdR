@@ -1,10 +1,11 @@
 #include "init.h"
 #include "Race.h"
 #include "Talent.h"
+#include "Competence.h"
 #include <stdlib.h>
 #include <string.h>
 
-void initRaces()
+int initRaces()
 {
     Race* demiElfe = new Race();
     demiElfe->setName("Demi-Elfe");
@@ -36,11 +37,13 @@ void initRaces()
     nain->setName("Nain");
     nain->setDescription("La race des nains");
 
+    return 0;
+
 }
 
-void initFeats()
+int initFeats()
 {
-    int i = 0;
+    int i;
 
     Talent** f_strengthModif = (Talent**)malloc(sizeof(Talent*)*10);
     Talent** f_dexterityModif = (Talent**)malloc(sizeof(Talent*)*10);
@@ -102,4 +105,113 @@ void initFeats()
         f_charismaModif[i]->type = CHARISMA_MODIF;
         f_charismaModif[i]->value = i;
     }
+
+    return 0;
+}
+
+int initSkills()
+{
+    int r = 0;
+
+    Competence* acrobaties = new Competence();
+    r+=acrobaties->setName("Acrobaties");
+    r+=acrobaties->setDescription("Competence d'acrobaties");
+
+    Competence* adm = new Competence();
+    r+=adm->setName("Art de la magie");
+    r+=adm->setDescription("Competence d'art de la magie");
+
+    Competence* art_ = new Competence();
+    r+=art_->setName("Artisanat");
+    r+=art_->setDescription("Competence d'artisanat");
+
+    Competence* bluff = new Competence();
+    r+=bluff->setName("Bluff");
+    r+=bluff->setDescription("Competence de bluff");
+
+    Competence* con_ = new Competence();
+    r+=con_->setName("Connaissance");
+    r+=con_->setDescription("Competence de connaissance");
+
+    Competence* deguisement = new Competence();
+    r+=deguisement->setName("Deguisement");
+    r+=deguisement->setDescription("Competence de deguisement");
+
+    Competence* diplomatie = new Competence();
+    r+=diplomatie->setName("Diplomatie");
+    r+=diplomatie->setDescription("Competence de diplomatie");
+
+    Competence* discretion = new Competence();
+    r+=discretion->setName("Discretion");
+    r+=discretion->setDescription("Competence de discretion");
+
+    Competence* dressage = new Competence();
+    r+=dressage->setName("Dressage");
+    r+=dressage->setDescription("Competence de discretion");
+
+    Competence* equitation = new Competence();
+    r+=equitation->setName("Equitation");
+    r+=equitation->setDescription("Competence d'equitation");
+
+    Competence* escalade = new Competence();
+    r+=escalade->setName("Escalade");
+    r+=escalade->setDescription("Competence d'escalade");
+
+    Competence* escamotage = new Competence();
+    r+=escamotage->setName("Escamotage");
+    r+=escamotage->setDescription("Competence d'escamotage");
+
+    Competence* estimation = new Competence();
+    r+=estimation->setName("Estimation");
+    r+=estimation->setDescription("Competence d'estimation");
+
+    Competence* evasion = new Competence();
+    r+=evasion->setName("Evasion");
+    r+=evasion->setDescription("Competence d'Evasion");
+
+    Competence* intimidation = new Competence();
+    r+=intimidation->setName("Intimidation");
+    r+=intimidation->setDescription("Competence d'intimidation");
+
+    Competence* linguistique = new Competence();
+    r+=linguistique->setName("Linguistique");
+    r+=linguistique->setDescription("Competence de linguistique");
+
+    Competence* natation = new Competence();
+    r+=natation->setName("Natation");
+    r+=natation->setDescription("Competence de natation");
+
+    Competence* perception = new Competence();
+    r+=perception->setName("Perception");
+    r+=perception->setDescription("Competence de perception");
+
+    Competence* pSecours = new Competence();
+    r+=pSecours->setName("Premiers secours");
+    r+=pSecours->setDescription("Competence de premiers secours");
+
+    Competence* profession = new Competence();
+    r+=profession->setName("Profession");
+    r+=profession->setDescription("Competence de profession");
+
+    Competence* representation = new Competence();
+    r+=representation->setName("Representation");
+    r+=representation->setDescription("Competence de representation");
+
+    Competence* sabotage = new Competence();
+    r+=sabotage->setName("Sabotage");
+    r+=sabotage->setDescription("Competence de sabotage");
+
+    Competence* survie = new Competence();
+    r+=survie->setName("Survie");
+    r+=survie->setDescription("Competence de survie");
+
+    Competence* uom = new Competence();
+    r+=uom->setName("Utilisation d'objets magiques");
+    r+=uom->setDescription("Competence d'utilisation des objets magiques");
+
+    Competence* vol = new Competence();
+    r+=vol->setName("Vol");
+    r+=vol->setDescription("Competence de vol");
+
+    return r;
 }

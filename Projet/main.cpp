@@ -39,10 +39,15 @@ int main()
     /**/
     if(INIT)
     {
-        initFeats();
-        test_init_feats();
-        initRaces();
-        test_init_races();
+        int r = 0;
+        r += initSkills();
+        r += test_init_skills();
+        r += initFeats();
+        r += test_init_feats();
+        r += initRaces();
+        r += test_init_races();
+
+        printf("r = %d\n", r);
         return 0;
     }
     /**/
@@ -87,7 +92,7 @@ int main()
         strcat(name[n],numero);
         areas[n].setName(name[n]);
         description[n] = (char*)(malloc(sizeof(char)*1024));
-        description[n] = "Cette zone est une zone de test";
+        strcpy(description[n], "Cette zone est une zone de test");
         areas[n].setDescription(description[n]);
 
         areas[n].setCells(cellules[n]);

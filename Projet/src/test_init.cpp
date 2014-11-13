@@ -1,6 +1,7 @@
 #include "test_init.h"
 #include "Race.h"
 #include "Talent.h"
+#include "Competence.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -35,4 +36,16 @@ int test_init_feats()
     }
 
     return 0;
+}
+
+int test_init_skills()
+{
+    int i = 0;
+
+    printf("nb_skills = %d\n", Competence::nbSkills);
+
+    for(i=0; i<Competence::nbSkills; i++)
+    {
+        printf("Skill %d id %d name %s \nDescription %s\n", i, Competence::listSkills[i]->id, Competence::listSkills[i]->getName(), Competence::listSkills[i]->getDescription());
+    }
 }

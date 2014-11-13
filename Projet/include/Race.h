@@ -9,21 +9,19 @@ class Race
         Race();
         virtual ~Race();
         char* getName();
-        void setName(char* newName);
+        int setName(char* newName);
         char* getDescription();
-        void setDescription(char* desc);
+        int setDescription(char* newDescription);
         int addFeat(Talent* newFeat);
         Talent** table_talent;
-        static int nbRaces;
         int nbFeats;
+        static int nbRaces;
         static Race** listRaces;
     protected:
+        char* name;
+        char* description;
     private:
     int iD_race;
-    char* name;
-    char* description;
-
-
 };
 
 #endif // RACE_H

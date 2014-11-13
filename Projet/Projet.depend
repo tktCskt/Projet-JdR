@@ -81,7 +81,7 @@
 	<string>
 	"loot.h"
 
-1415832831 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
+1415878926 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
 	"personnage.h"
 	<string>
 	<string.h>
@@ -119,7 +119,7 @@
 	"Area.h"
 	<list>
 
-1415841015 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
+1415919183 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
 	<iostream>
 	"Cell.h"
 	"Area.h"
@@ -325,7 +325,7 @@
 
 1415840963 c:\users\xavier\desktop\projet-jdr\projet\include\talent.h
 
-1415840963 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
+1415918935 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
 	"Talent.h"
 
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\bonus.cpp
@@ -344,10 +344,12 @@
 	"evolution.h"
 	"stdlib.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\competence.cpp
+1415918646 source:c:\users\xavier\desktop\projet-jdr\projet\src\competence.cpp
 	"competence.h"
+	<stdlib.h>
+	<string.h>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\competence.h
+1415917914 c:\users\xavier\desktop\projet-jdr\projet\include\competence.h
 
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\discussion.cpp
 	"Discussion.h"
@@ -378,14 +380,16 @@
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\objet.cpp
 	"objet.h"
 
-1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
+1415918935 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
 	"race.h"
 	<stdlib.h>
+	<string.h>
 
-1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
+1415841242 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
 	"talent.h"
 	<stdlib.h>
 	<string.h>
+	<stdio.h>
 
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\utilisateur.cpp
 	"utilisateur.h"
@@ -398,21 +402,23 @@
 	"init.h"
 	"Race.h"
 
-1415836838 c:\users\xavier\desktop\projet-jdr\projet\include\init.h
+1415919100 c:\users\xavier\desktop\projet-jdr\projet\include\init.h
 
-1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.cpp
+1415919100 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.cpp
 	"init.h"
 	"Race.h"
 	"Talent.h"
+	"Competence.h"
 	<stdlib.h>
 	<string.h>
 
-1415840976 source:c:\users\xavier\desktop\projet-jdr\projet\src\test_init.cpp
+1415918522 source:c:\users\xavier\desktop\projet-jdr\projet\src\test_init.cpp
 	"test_init.h"
 	"Race.h"
 	"Talent.h"
+	"Competence.h"
 	<stdio.h>
 	<string.h>
 
-1415836838 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
+1415918277 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
 
