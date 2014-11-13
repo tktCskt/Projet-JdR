@@ -2,21 +2,24 @@
 #include <stdlib.h>
 
 int Race::nbRaces = 0;
-Race* Race::listRaces = (Race*)(malloc(sizeof(Race)*50));
+Race** Race::listRaces = (Race**)(malloc(sizeof(Race*)*50));
 
 Race::Race()
 {
-    //ctor
+    Race::listRaces[Race::nbRaces] = this;
+    Race::nbRaces++;
+    this->table_talent = (Talent**)malloc(sizeof(Talent*)*300);
+    this->nbFeats = 0;
 }
 
 Race::~Race()
 {
-    //dtor
+    free(this->table_talent);
 }
-// getter possible
+
 char *Race::getName()
 {
-    return nom;
+    return this->name;
 }
 
 char *Race::getDescription()
@@ -24,16 +27,19 @@ char *Race::getDescription()
     return description;
 }
 
-
-
-
-//setter possible
-
-void Race::setName(char* n)
+void Race::setName(char* newName)
 {
-    nom = n;
+    this->name = newName;
 }
 void Race::setDescription(char* desc)
 {
     description = desc;
+}
+
+int Race::addFeat(Talent* newFeat)
+{
+    this->table_talent[nbFeats] = newFeat;
+    this->nbFeats++;
+
+    return 0;
 }

@@ -1,26 +1,28 @@
 #ifndef RACE_H
 #define RACE_H
 
-#include <iostream>
-#include <string>
+#include "Talent.h"
+
 class Race
 {
      public:
         Race();
         virtual ~Race();
         char* getName();
-        void setName(char* n);
+        void setName(char* newName);
         char* getDescription();
         void setDescription(char* desc);
-
+        int addFeat(Talent* newFeat);
+        Talent** table_talent;
         static int nbRaces;
-        static Race* listRaces;
+        int nbFeats;
+        static Race** listRaces;
     protected:
     private:
     int iD_race;
-    char* nom;
+    char* name;
     char* description;
-    int table_talent[300];// id_talent
+
 
 };
 

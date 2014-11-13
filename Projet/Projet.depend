@@ -81,7 +81,7 @@
 	<string>
 	"loot.h"
 
-1415828253 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
+1415832831 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
 	"personnage.h"
 	<string>
 	<string.h>
@@ -119,7 +119,7 @@
 	"Area.h"
 	<list>
 
-1415828594 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
+1415841015 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
 	<iostream>
 	"Cell.h"
 	"Area.h"
@@ -132,6 +132,8 @@
 	"Race.h"
 	"Classe.h"
 	"Personnage.h"
+	"init.h"
+	"test_init.h"
 
 1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\guard.h
 	"PNJ.h"
@@ -321,11 +323,10 @@
 	<iostream>
 	<string>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\talent.h
+1415840963 c:\users\xavier\desktop\projet-jdr\projet\include\talent.h
 
-1415826273 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
-	<iostream>
-	<string>
+1415840963 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
+	"Talent.h"
 
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\bonus.cpp
 	"bonus.h"
@@ -377,12 +378,14 @@
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\objet.cpp
 	"objet.h"
 
-1415827715 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
+1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
 	"race.h"
 	<stdlib.h>
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
+1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
 	"talent.h"
+	<stdlib.h>
+	<string.h>
 
 1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\utilisateur.cpp
 	"utilisateur.h"
@@ -390,4 +393,26 @@
 1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\utilisateur.h
 	<iostream>
 	<string>
+
+1415832783 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.c
+	"init.h"
+	"Race.h"
+
+1415836838 c:\users\xavier\desktop\projet-jdr\projet\include\init.h
+
+1415840963 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.cpp
+	"init.h"
+	"Race.h"
+	"Talent.h"
+	<stdlib.h>
+	<string.h>
+
+1415840976 source:c:\users\xavier\desktop\projet-jdr\projet\src\test_init.cpp
+	"test_init.h"
+	"Race.h"
+	"Talent.h"
+	<stdio.h>
+	<string.h>
+
+1415836838 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
 

@@ -10,8 +10,12 @@
 #include "Race.h"
 #include "Classe.h"
 #include "Personnage.h"
+#include "init.h"
+#include "test_init.h"
 
 using namespace std;
+
+#define INIT true
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
@@ -33,6 +37,14 @@ Personnage* newCharacter();
 int main()
 {
     /**/
+    if(INIT)
+    {
+        initFeats();
+        test_init_feats();
+        initRaces();
+        test_init_races();
+        return 0;
+    }
     /**/
     // ********** Initialisation Campagne **********
 
@@ -127,7 +139,8 @@ int main()
     }
     free(cellules);
     printf("cells freed\n");
-
+    free(Race::listRaces);
+    free(Classe::listClasses);
     return 0;
 }
 
