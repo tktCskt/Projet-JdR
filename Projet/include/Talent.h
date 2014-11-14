@@ -23,7 +23,7 @@ class Talent
         static int nbFeats;
         static Talent** listFeats;
 
-        static Talent* getFeatByName(char* featName);
+        static Talent* getFeatByName(const char* featName);
 
     protected:
     private:

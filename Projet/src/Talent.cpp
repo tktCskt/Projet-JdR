@@ -10,6 +10,9 @@ Talent::Talent()
 {
     Talent::listFeats[Talent::nbFeats] = this;
     this->id = nbFeats;
+    this->value = 0;
+    this->name = (char*)"default name";
+    this->description = (char*)"default description";
     Talent::nbFeats++;
 }
 
@@ -18,7 +21,7 @@ Talent::~Talent()
     //dtor
 }
 
-Talent* Talent::getFeatByName(char* featName)
+Talent* Talent::getFeatByName(const char* featName)
 {
     int i = 0;
 

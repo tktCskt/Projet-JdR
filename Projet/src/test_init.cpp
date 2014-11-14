@@ -14,10 +14,10 @@ int test_init_races()
 
     for(i=0; i<Race::nbRaces; i++)
     {
-        printf("Race %d : %s\nDescription : %s\n", i, Race::listRaces[i]->getName(), Race::listRaces[i]->getDescription());
+        printf("Race %d : %s\nDescription : %s\n", i, Race::listRaces[i]->name, Race::listRaces[i]->description);
         for(j=0; j<Race::listRaces[i]->nbFeats; j++)
         {
-            printf("Feat %d of %ss, name = %s id = %d\n", j, Race::listRaces[i]->getName(), Race::listRaces[i]->table_talent[j]->name, Race::listRaces[i]->table_talent[j]->id);
+            printf("Feat %d of %ss, name = %s id = %d\n", j, Race::listRaces[i]->name, Race::listRaces[i]->table_talent[j]->name, Race::listRaces[i]->table_talent[j]->id);
         }
     }
 
@@ -46,6 +46,8 @@ int test_init_skills()
 
     for(i=0; i<Competence::nbSkills; i++)
     {
-        printf("Skill %d id %d name %s \nDescription %s\n", i, Competence::listSkills[i]->id, Competence::listSkills[i]->getName(), Competence::listSkills[i]->getDescription());
+        printf("Skill %d id %d name %s \nDescription %s\n", i, Competence::listSkills[i]->id, Competence::listSkills[i]->name, Competence::listSkills[i]->description);
     }
+
+    return 0;
 }

@@ -8,18 +8,14 @@ class Race
      public:
         Race();
         virtual ~Race();
-        char* getName();
-        int setName(char* newName);
-        char* getDescription();
-        int setDescription(char* newDescription);
         int addFeat(Talent* newFeat);
         Talent** table_talent;
         int nbFeats;
         static int nbRaces;
         static Race** listRaces;
-    protected:
         char* name;
         char* description;
+    protected:
     private:
     int iD_race;
 };

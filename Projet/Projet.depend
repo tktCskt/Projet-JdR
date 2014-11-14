@@ -62,64 +62,64 @@
 
 1414432778 c:\users\xavier\documents\projet\include\discussion.h
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\area.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\area.cpp
 	"Area.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\area.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\area.h
 	"Cell.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\cell.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\cell.h
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\cell.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\cell.cpp
 	"Cell.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\monstre.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\monstre.cpp
 	"monstre.h"
 
-1415828594 c:\users\xavier\desktop\projet-jdr\projet\include\monstre.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\monstre.h
 	<iostream>
 	<string>
 	"loot.h"
 
-1415878926 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
+1415979677 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnage.cpp
 	"personnage.h"
 	<string>
 	<string.h>
 	<stdlib.h>
 
-1415828594 c:\users\xavier\desktop\projet-jdr\projet\include\personnage.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\personnage.h
 	<iostream>
 	<string>
 	"Classe.h"
 	"Race.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnagescenario.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\personnagescenario.cpp
 	"PersonnageScenario.h"
 	<stdio.h>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\personnagescenario.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\personnagescenario.h
 	"Personnage.h"
 	"Cell.h"
 	"Area.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\pnj.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\pnj.cpp
 	"PNJ.h"
 	"stdio.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\pnj.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\pnj.h
 	"Monstre.h"
 	"Area.h"
 	"Cell.h"
 	<stdio.h>
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\scenario.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\scenario.cpp
 	"Scenario.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\scenario.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\scenario.h
 	"Area.h"
 	<list>
 
-1415919183 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
+1415966040 source:c:\users\xavier\desktop\projet-jdr\projet\main.cpp
 	<iostream>
 	"Cell.h"
 	"Area.h"
@@ -135,10 +135,10 @@
 	"init.h"
 	"test_init.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\guard.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\guard.h
 	"PNJ.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\guard.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\guard.cpp
 	"Guard.h"
 	<stdio.h>
 
@@ -302,99 +302,99 @@
 	<iostream>
 	<string>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\loot.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\loot.h
 	"objet.h"
 	"monstre.h"
 	<iostream>
 	<string>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\objet.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\objet.h
 	<iostream>
 	<string>
 
-1415826863 c:\users\xavier\desktop\projet-jdr\projet\include\classe.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\classe.h
 	"evolution.h"
 	<iostream>
 	<string>
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\evolution.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\evolution.h
 	"classe.h"
 	"talent.h"
 	<iostream>
 	<string>
 
-1415840963 c:\users\xavier\desktop\projet-jdr\projet\include\talent.h
+1415965670 c:\users\xavier\desktop\projet-jdr\projet\include\talent.h
 
-1415918935 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
+1415979763 c:\users\xavier\desktop\projet-jdr\projet\include\race.h
 	"Talent.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\bonus.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\bonus.cpp
 	"bonus.h"
 	"objet.h"
 	"talent.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\bonus.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\bonus.h
 	"objet.h"
 	"talent.h"
 	<iostream>
 	<string>
 
-1415827821 source:c:\users\xavier\desktop\projet-jdr\projet\src\classe.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\classe.cpp
 	"classe.h"
 	"evolution.h"
 	"stdlib.h"
 
-1415918646 source:c:\users\xavier\desktop\projet-jdr\projet\src\competence.cpp
+1415979763 source:c:\users\xavier\desktop\projet-jdr\projet\src\competence.cpp
 	"competence.h"
 	<stdlib.h>
 	<string.h>
 
-1415917914 c:\users\xavier\desktop\projet-jdr\projet\include\competence.h
+1415979763 c:\users\xavier\desktop\projet-jdr\projet\include\competence.h
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\discussion.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\discussion.cpp
 	"Discussion.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\discussion.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\discussion.h
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\evolution.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\evolution.cpp
 	"evolution.h"
 	"classe.h"
 	"talent.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\inventaire.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\inventaire.cpp
 	"inventaire.h"
 	"personnage.h"
 	"objet.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\inventaire.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\inventaire.h
 	"personnage.h"
 	"objet.h"
 	<iostream>
 	<string>
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\loot.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\loot.cpp
 	"loot.h"
 	"objet.h"
 	"monstre.h"
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\objet.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\objet.cpp
 	"objet.h"
 
-1415918935 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
+1415979380 source:c:\users\xavier\desktop\projet-jdr\projet\src\race.cpp
 	"race.h"
 	<stdlib.h>
 	<string.h>
 
-1415841242 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
+1415979241 source:c:\users\xavier\desktop\projet-jdr\projet\src\talent.cpp
 	"talent.h"
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 
-1415819629 source:c:\users\xavier\desktop\projet-jdr\projet\src\utilisateur.cpp
+1415965356 source:c:\users\xavier\desktop\projet-jdr\projet\src\utilisateur.cpp
 	"utilisateur.h"
 
-1415819629 c:\users\xavier\desktop\projet-jdr\projet\include\utilisateur.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\utilisateur.h
 	<iostream>
 	<string>
 
@@ -402,17 +402,18 @@
 	"init.h"
 	"Race.h"
 
-1415919100 c:\users\xavier\desktop\projet-jdr\projet\include\init.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\init.h
 
-1415919100 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.cpp
+1415980428 source:c:\users\xavier\desktop\projet-jdr\projet\src\init.cpp
 	"init.h"
 	"Race.h"
 	"Talent.h"
 	"Competence.h"
 	<stdlib.h>
 	<string.h>
+	<stdio.h>
 
-1415918522 source:c:\users\xavier\desktop\projet-jdr\projet\src\test_init.cpp
+1415981008 source:c:\users\xavier\desktop\projet-jdr\projet\src\test_init.cpp
 	"test_init.h"
 	"Race.h"
 	"Talent.h"
@@ -420,5 +421,5 @@
 	<stdio.h>
 	<string.h>
 
-1415918277 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
+1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
 

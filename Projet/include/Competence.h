@@ -12,14 +12,10 @@ class Competence
         static int nbSkills;
         static Competence** listSkills;
 
-        int setName(char* newName);
-        int setDescription(char* newDescription);
-        char* getName();
-        char* getDescription();
-
-    protected:
         char* name;
         char* description;
+
+    protected:
     private:
 };
 

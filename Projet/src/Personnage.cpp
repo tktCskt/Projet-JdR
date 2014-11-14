@@ -206,7 +206,7 @@ int Personnage::setRace(char* newRace, char* bonus)
     int i;
     for(i=0; i<(int)(Race::nbRaces); i++)
     {
-        if(strcmp(newRace,Race::listRaces[i]->getName()))
+        if(strcmp(newRace,Race::listRaces[i]->name))
         {
             this->setRace(*Race::listRaces[i],bonus);
         }
