@@ -15,13 +15,19 @@
 
 using namespace std;
 
-#define INIT true
+/* Set these below to true to test related functions
+   Set them to false if you don't care
+   */
+#define TEST_INIT true
+#define TEST_CAMPAGNE false
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
 #define TAILLE_ZONE_Y 10
 #define NB_NPC_MAX 10
 
+int init_test_skills_feats_races();
+int init_test_campagne();
 int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
 bool adjacence(Area*, int, int);
 int menu (PersonnageScenario*, Area*, PNJScenario**);
@@ -36,9 +42,31 @@ Personnage* newCharacter();
   */
 int main()
 {
-    /**/
-    if(INIT)
+
+    // ********** Initialisation Skills / Feats / Races **********
+    if(TEST_INIT)
     {
+        printf("hello %d\n",3);
+        if (init_test_skills_feats_races()!=0)
+            return 1;
+    }
+
+    // ********** Initialisation Campagne **********
+    if (TEST_CAMPAGNE)
+    {
+        if (init_test_campagne()!=0)
+            return 1;
+    }
+
+    return 0;
+}
+
+/**
+ * Initialize the creation of skills / feats / races classes for test use
+ * @return 0 if it went well
+ */
+int init_test_skills_feats_races()
+{
         int r = 0;
         r += initSkills();
         r += test_init_skills();
@@ -49,10 +77,14 @@ int main()
 
         printf("r = %d\n", r);
         return 0;
-    }
-    /**/
-    // ********** Initialisation Campagne **********
+}
 
+/**
+ * Launch the "Rat King" campaign for test use
+ * @return 0 if it went well
+ */
+int init_test_campagne()
+{
     /* We create NB_ZONES table of Cells according to the size of the Areas TAILLE_ZONE_X*TAILLE_ZONE_Y
        They are all NORMAL and not Busy */
     int i,j,n = 0;
