@@ -38,7 +38,7 @@ void discussionQuest();
 Personnage* newCharacter();
 /**
   * The Epic Quest to kill the Rat King, now available on your computer!
-  * @return 1 Once it's ended
+  * @return 0 if it went well
   */
 int main()
 {
