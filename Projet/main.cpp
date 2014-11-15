@@ -46,7 +46,6 @@ int main()
     // ********** Initialisation Skills / Feats / Races **********
     if(TEST_INIT)
     {
-        printf("hello %d\n",3);
         if (init_test_skills_feats_races()!=0)
             return 1;
     }
