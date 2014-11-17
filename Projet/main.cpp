@@ -19,7 +19,7 @@ using namespace std;
    Set them to false if you don't care
    */
 #define TEST_INIT true
-#define TEST_CAMPAGNE false
+#define TEST_CAMPAGNE true
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
@@ -28,14 +28,23 @@ using namespace std;
 
 int init_test_skills_feats_races();
 int init_test_campagne();
-int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
-bool adjacence(Area*, int, int);
+
 int menu (PersonnageScenario*, Area*, PNJScenario**);
 int menu_deplacer (PersonnageScenario*, Area*);
 int menu_interraction (PersonnageScenario*, PNJScenario**);
+
+int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
+bool adjacence(Area*, int, int);
+
 void discussion(PNJScenario* npc);
 void discussionQuest();
+
+void combat(PNJScenario** npcList, PNJScenario* npc);
+bool attaquer(PNJScenario* npc);
+void mort(PNJScenario* npc);
+
 Personnage* newCharacter();
+
 /**
   * The Epic Quest to kill the Rat King, now available on your computer!
   * @return 0 if it went well
@@ -129,7 +138,7 @@ int init_test_campagne()
         areas[n].setCells(cellules[n]);
     }
 
-    /* We create a Rat and an guard which give the quest to kill the King Rat */
+    /* We create a Rat and a guard which give the quest to kill the King Rat */
     printf("Initialisation PNJ...\n");
     PNJScenario** pnjs = (PNJScenario**)(malloc(sizeof(PNJScenario*)*NB_NPC_MAX));
     pnjs[0] = new PNJScenario(&areas[0],1);
@@ -139,6 +148,7 @@ int init_test_campagne()
     pnjs[1]->setName("Garde un peu nul");
     pnjs[2]->setName("Garde trop baleze");
     pnjs[1]->discuss = discussionQuest;
+
     /* We create a Personnage which will have to kill the King Rat to free the world from rat domination */
     printf("Initialisation personnage...\n\n");
     PersonnageScenario* ganjoTest = (PersonnageScenario*)(malloc(sizeof(PersonnageScenario)));
@@ -152,8 +162,6 @@ int init_test_campagne()
     {
         fin = menu(ganjoTest,areas,pnjs);
     }
-
-    // ********** Fin Campagne **********
 
     // We free the PNJ
 
@@ -186,12 +194,12 @@ int init_test_campagne()
   */
 int getNPCNearTo(Area* area, int idCell, PNJScenario** npcList, PNJScenario** npcListReturned)
 {
-    int n = npcList[0]->nbNPC;
+    int n = PNJScenario::nbNPC;
     int i = 0;
     int r = 0;
     for(i=0; i<n; i++)
     {
-        if(npcList[i]->getArea() == area)
+        if (npcList[i]!=NULL && npcList[i]->getArea() == area)
         {
             if(adjacence(area, idCell, npcList[i]->getCell()->getId()))
             {
@@ -339,35 +347,42 @@ int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
     printf("Cell id = %d, x = %d, y = %d\n\n",PJ->getCell()->getId(),x,y);
     //bug ici apres déplacement + 3 "agir"
     int r = getNPCNearTo(PJ->getArea(),PJ->getCell()->getId(),npcList,pnjs2);
-    printf("%d pnjs a cote\n\n", r);
-    for(int n=0; n<r; n++)
-    {
-        pnjs2[n]->getArea()->getCoordonate(pnjs2[n]->getCell()->getId(),&x,&y);
-        printf("%d)%s sur la cellule id=%d,x=%d,y=%d\n",n, pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
-    }
-    printf("\n");
 
-    int nPNJ = 0;
-    printf("--- Interragir avec quel PNJ ? ---\n\n");
-    scanf("%d",&nPNJ); printf("\n");
+    if (r==0) { // Aucun PNJ
+        printf("Mais il n'y a aucun PNJ a cote...\n\n");
+        return 0;
+    } else {
+        printf("%d pnjs a cote\n\n", r);
+        for(int n=0; n<r; n++)
+        {
+            pnjs2[n]->getArea()->getCoordonate(pnjs2[n]->getCell()->getId(),&x,&y);
+            printf("%d)%s sur la cellule id=%d,x=%d,y=%d\n", n, pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
+        }
+        printf("\n");
 
-    // TODO Gerer erreur
-    printf("--- Que faire sur %s ? ---\n1)Attaquer\n2)Discuter\n3)Examiner\n\n",pnjs2[nPNJ]->getName());
-    int choice = 0;
-    scanf("%d",&choice); printf("\n");
-    switch(choice)
-    {
-        case 1 :
-            break;
-        case 2 :
-            discussion(pnjs2[nPNJ]);
-            break;
-        case 3 :
-            break;
-        default :
-            break;
+        int nPNJ = 0;
+        printf("--- Interragir avec quel PNJ ? ---\n\n");
+        scanf("%d",&nPNJ); printf("\n");
+
+        // TODO Gerer erreur
+        printf("--- Que faire sur %s ? ---\n1)Attaquer\n2)Discuter\n3)Examiner\n\n",pnjs2[nPNJ]->getName());
+        int choice = 0;
+        scanf("%d",&choice); printf("\n");
+        switch(choice)
+        {
+            case 1 :
+                combat(npcList, pnjs2[nPNJ]);
+                break;
+            case 2 :
+                discussion(pnjs2[nPNJ]);
+                break;
+            case 3 :
+                break;
+            default :
+                break;
+        }
+        return 0;
     }
-    return 0;
 }
 
 void discussion(PNJScenario* npc)
@@ -390,6 +405,65 @@ void discussionQuest()
     default :
         printf("kastoi tupu\n");
     }
+}
+
+/**
+  * The whole process of getting stronger or die trying
+  */
+void combat(PNJScenario** npcList, PNJScenario* npc) {
+    bool mechant = true;
+    int choice;
+
+    // get which npc will fight alongside npc
+
+    while (mechant) {
+        printf("--- Combat ---\n1)Taper avec sa grosse epee\n2)Implorer pardon\n\n");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                if (attaquer(npc)) { // le npc est mort
+                    /* on détruit le npc */
+                    int n = PNJScenario::nbNPC;
+                    for (int i=0; i<n; i++) {
+                        if (npcList[i]!=NULL && npcList[i]==npc) {
+                            npcList[i]=NULL;
+                            free(npc);
+                        }
+                    }
+
+                    /* on regarde si tous les monstres sont morts */
+                    mechant = false;
+                }
+                break;
+            default:
+                printf("%s vous regarde avec dédain alors que vous fuyez\n\n", npc->getName());
+                mechant=false;
+        }
+    }
+}
+
+/**
+  * Get stronger or die trying
+  * @return true if the enemy is dead
+  */
+bool attaquer(PNJScenario* npc) {
+    printf("COUP CRITIQUE ! C'est super efficace.\n");
+    //if (npc->getHPLeft()==0)
+        mort(npc);
+        return true;
+    //else
+    //  return false;
+}
+
+/**
+  * You got stronger
+  */
+void mort(PNJScenario* npc) {
+    npc->getCell()->setB(false);
+
+    printf("Vous avez detruit le vil %s!\n\n", npc->getName());
+    printf("Vous obtenez %d xp et aucun objet. (C'est un rat, vous vous attendiez a quoi ?)\n\n", npc->getXp());
 }
 
 Personnage* newCharacter()

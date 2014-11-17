@@ -423,3 +423,200 @@
 
 1415965356 c:\users\xavier\desktop\projet-jdr\projet\include\test_init.h
 
+1415109653 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\area.cpp
+	"Area.h"
+
+1415109597 c:\users\nyakisa\desktop\projet-jdr\projet\include\area.h
+	"Cell.h"
+
+1415109274 c:\users\nyakisa\desktop\projet-jdr\projet\include\cell.h
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\bonus.cpp
+	"bonus.h"
+	"objet.h"
+	"talent.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\bonus.h
+	"objet.h"
+	"talent.h"
+	<iostream>
+	<string>
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\objet.h
+	<iostream>
+	<string>
+
+1416083349 c:\users\nyakisa\desktop\projet-jdr\projet\include\talent.h
+
+1415111019 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\cell.cpp
+	"Cell.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\classe.cpp
+	"classe.h"
+	"evolution.h"
+	"stdlib.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\classe.h
+	"evolution.h"
+	<iostream>
+	<string>
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\evolution.h
+	"classe.h"
+	"talent.h"
+	<iostream>
+	<string>
+
+1414928217 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\discussion.cpp
+	"Discussion.h"
+
+1414928217 c:\users\nyakisa\desktop\projet-jdr\projet\include\discussion.h
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\evolution.cpp
+	"evolution.h"
+	"classe.h"
+	"talent.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\guard.cpp
+	"Guard.h"
+	<stdio.h>
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\guard.h
+	"PNJ.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\pnj.h
+	"Monstre.h"
+	"Area.h"
+	"Cell.h"
+	<stdio.h>
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\monstre.h
+	<iostream>
+	<string>
+	"loot.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\loot.h
+	"objet.h"
+	"monstre.h"
+	<iostream>
+	<string>
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\inventaire.cpp
+	"inventaire.h"
+	"personnage.h"
+	"objet.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\inventaire.h
+	"personnage.h"
+	"objet.h"
+	<iostream>
+	<string>
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\personnage.h
+	<iostream>
+	<string>
+	"Classe.h"
+	"Race.h"
+
+1416083349 c:\users\nyakisa\desktop\projet-jdr\projet\include\race.h
+	"Talent.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\loot.cpp
+	"loot.h"
+	"objet.h"
+	"monstre.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\monstre.cpp
+	"monstre.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\objet.cpp
+	"objet.h"
+
+1415108852 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\personnagescenario.cpp
+	"PersonnageScenario.h"
+	<stdio.h>
+
+1415109142 c:\users\nyakisa\desktop\projet-jdr\projet\include\personnagescenario.h
+	"Personnage.h"
+	"Cell.h"
+	"Area.h"
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\pnj.cpp
+	"PNJ.h"
+	"stdio.h"
+
+1414928217 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\scenario.cpp
+	"Scenario.h"
+
+1414928217 c:\users\nyakisa\desktop\projet-jdr\projet\include\scenario.h
+	"Area.h"
+	<list>
+
+1415830156 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\utilisateur.cpp
+	"utilisateur.h"
+
+1415830156 c:\users\nyakisa\desktop\projet-jdr\projet\include\utilisateur.h
+	<iostream>
+	<string>
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\competence.cpp
+	"competence.h"
+	<stdlib.h>
+	<string.h>
+
+1416083349 c:\users\nyakisa\desktop\projet-jdr\projet\include\competence.h
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\init.cpp
+	"init.h"
+	"Race.h"
+	"Talent.h"
+	"Competence.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1416081094 c:\users\nyakisa\desktop\projet-jdr\projet\include\init.h
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\personnage.cpp
+	"personnage.h"
+	<string>
+	<string.h>
+	<stdlib.h>
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\race.cpp
+	"race.h"
+	<stdlib.h>
+	<string.h>
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\talent.cpp
+	"talent.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1416083349 source:c:\users\nyakisa\desktop\projet-jdr\projet\src\test_init.cpp
+	"test_init.h"
+	"Race.h"
+	"Talent.h"
+	"Competence.h"
+	<stdio.h>
+	<string.h>
+
+1416081094 c:\users\nyakisa\desktop\projet-jdr\projet\include\test_init.h
+
+1416238947 source:c:\users\nyakisa\desktop\projet-jdr\projet\main.cpp
+	<iostream>
+	"Cell.h"
+	"Area.h"
+	"PersonnageScenario.h"
+	"PNJ.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<Guard.h>
+	"Race.h"
+	"Classe.h"
+	"Personnage.h"
+	"init.h"
+	"test_init.h"
+
