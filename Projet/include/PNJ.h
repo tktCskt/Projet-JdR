@@ -44,6 +44,6 @@ class PNJScenario : public Monstre
 
 inline void npcDiscussion()
 {
-    printf("Bonjour je suis un PNJ\n");
+    printf("Bonjour je suis un PNJ\n\n");
 }
 #endif // PNJ_H

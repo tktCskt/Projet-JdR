@@ -22,7 +22,7 @@ int Area::getXMax()
     return this->xMax;
 }
 
-int Area::getYmax()
+int Area::getYMax()
 {
     return this->yMax;
 }
@@ -40,6 +40,11 @@ char* Area::getDescription()
 Cell* Area::getCells()
 {
     return this->listCells;
+}
+
+Cell Area::getCell(int x, int y)
+{
+    return this->getCells()[y*xMax+x];
 }
 
 void Area::getCoordonate(int idCell, int* x, int* y)

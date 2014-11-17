@@ -14,6 +14,6 @@ class Guard : public PNJScenario
 
 inline void guardDiscussion()
 {
-    printf("Bonjour jeune aventurier ! Moi aussi je partais a l aventure autrefois et puis j ai pris une fleche dans le genou.\n");
+    printf("Bonjour jeune aventurier ! Moi aussi je partais a l aventure autrefois et puis j ai pris une fleche dans le genou.\n\n");
 }
 #endif // GUARD_H

@@ -14,9 +14,10 @@ class Area
 
         int getId();
         int getXMax();
-        int getYmax();
+        int getYMax();
         char* getName();
         char* getDescription();
+        Cell getCell(int x, int y);
         void getCoordonate(int idCell, int* x, int* y);
 
         void setId(int id);

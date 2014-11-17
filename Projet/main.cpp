@@ -33,6 +33,8 @@ int menu (PersonnageScenario*, Area*, PNJScenario**);
 int menu_deplacer (PersonnageScenario*, Area*);
 int menu_interraction (PersonnageScenario*, PNJScenario**);
 
+void displayCarte(Area* area);
+
 int getNPCNearTo(Area*, int, PNJScenario**, PNJScenario**);
 bool adjacence(Area*, int, int);
 
@@ -231,22 +233,50 @@ bool adjacence(Area* area, int idCell1, int idCell2)
   */
 int menu (PersonnageScenario* PJ, Area* areas, PNJScenario** npcList)
 {
-        int choice;
-        printf("--- Que faire ? ---\n1)Se deplacer\n2)Agir sur les PNJs\n3)Fin\n\n");
-        scanf("%d",&choice); printf("\n");
-        switch(choice)
-        {
-        case 1 :
-            menu_deplacer(PJ,areas);
-            break;
-        case 2 :
-            menu_interraction(PJ,npcList);
-            break;
-        default :
-            return 1;
-            break;
+    displayCarte(PJ->getArea());
+
+    int choice;
+    int x,y;
+    PJ->getArea()->getCoordonate(PJ->getCell()->getId(),&x,&y);
+
+    printf("--- Vous etes en %s (%d,%d) ---\n", PJ->getArea()->getName(), PJ->getCell()->getX(), PJ->getCell()->getY());
+    printf("1)Se deplacer\n2)Agir sur les PNJs\n3)Fin\n\n");
+    scanf("%d",&choice); printf("\n");
+
+    switch(choice)
+    {
+    case 1 :
+        menu_deplacer(PJ,areas);
+        break;
+    case 2 :
+        menu_interraction(PJ,npcList);
+        break;
+    default :
+        return 1;
+        break;
+    }
+    return 0;
+}
+
+/**
+  * Who needs a map?
+  */
+void displayCarte(Area* area)
+{
+    int xmax = area->getXMax();
+    int ymax = area->getYMax();
+
+    for (int j=ymax; j>=0; j--) {
+        for (int i=0; i<xmax; i++) {
+            Cell cell = area->getCell(i,j);
+            if (cell.getB()==true)
+                printf("@");
+            else
+                printf("-");
         }
-        return 0;
+        printf("\n");
+    }
+    printf("\n");
 }
 
 /**
@@ -255,11 +285,12 @@ int menu (PersonnageScenario* PJ, Area* areas, PNJScenario** npcList)
 int menu_deplacer (PersonnageScenario* PJ, Area* areas)
 {
     int choice;
-    printf("--- Deplacement : ---\n1)Avancer horizontalement\n2)Reculer Horizontalement\n3)Avancer verticalement\n4)Reculer vreticalement\n5)Changer de zone\n\n");
+    printf("--- Deplacement : ---\n");
+    printf("1)Avancer horizontalement\n2)Reculer Horizontalement\n3)Avancer verticalement\n4)Reculer vreticalement\n5)Changer de zone\n\n");
     scanf("%d",&choice); printf("\n");
      switch(choice)
         {
-        case 1 :
+        case 1 : // Avancer horizontalement aka à droite
             if(!(PJ->getCell()->getX() == TAILLE_ZONE_X-1))
             {
                  if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()+1,PJ->getCell()->getY()) == 0)
@@ -276,7 +307,7 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
                 printf("Vous ne pouvez pas avancer, PJ->idCell=%d\n\n",PJ->getCell()->getId());
             }
             break;
-        case 2 :
+        case 2 : // Reculer horizontalement aka à gauche
             if(!(PJ->getCell()->getX() == 0))
             {
                 if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()-1,PJ->getCell()->getY()) == 0)
@@ -293,7 +324,7 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
                 printf("Vous ne pouvez pas reculer, PJ->idCell=%d\n\n",PJ->getCell()->getId());
             }
             break;
-        case 3 :
+        case 3 : // Avancer verticalement aka en haut
             if(!(PJ->getCell()->getY() == TAILLE_ZONE_Y-1))
             {
                 if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX(),PJ->getCell()->getY()+1) == 0)
@@ -310,7 +341,7 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
                 printf("Vous ne pouvez pas avancer, PJ->idCell=%d\n\n",PJ->getCell()->getId());
             }
             break;
-        case 4 :
+        case 4 : // Reculer verticalement aka en bas
             if(!(PJ->getCell()->getY() == 0))
             {
                 if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX(),PJ->getCell()->getY()-1) == 0)
@@ -356,7 +387,7 @@ int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
         for(int n=0; n<r; n++)
         {
             pnjs2[n]->getArea()->getCoordonate(pnjs2[n]->getCell()->getId(),&x,&y);
-            printf("%d)%s sur la cellule id=%d,x=%d,y=%d\n", n, pnjs2[n]->getName(),pnjs2[n]->getCell()->getId(),x,y);
+            printf("%d)%s sur la cellule id=%d,x=%d,y=%d\n", n, pnjs2[n]->getName(), pnjs2[n]->getCell()->getId(), x, y);
         }
         printf("\n");
 
@@ -400,10 +431,10 @@ void discussionQuest()
     switch(choice)
     {
     case 1 :
-        printf("ty, tu le ra stp.. jte donere 1 tresor apre\n");
+        printf("ty, tu le ra stp.. jte donere 1 tresor apre\n\n");
         break;
     default :
-        printf("kastoi tupu\n");
+        printf("kastoi tupu\n\n");
     }
 }
 
