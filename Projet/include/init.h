@@ -2,7 +2,7 @@
 #define INIT_H_INCLUDED
 
 int initRaces();
-int initFeats();
+int initTalents();
 int initSkills();
 
 #endif // INIT_H_INCLUDED

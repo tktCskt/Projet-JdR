@@ -15,24 +15,24 @@ int test_init_races()
     for(i=0; i<Race::nbRaces; i++)
     {
         printf("Race %d : %s\nDescription : %s\n", i, Race::listRaces[i]->name, Race::listRaces[i]->description);
-        for(j=0; j<Race::listRaces[i]->nbFeats; j++)
+        for(j=0; j<Race::listRaces[i]->nbTalents; j++)
         {
-            printf("Feat %d of %ss, name = %s id = %d\n", j, Race::listRaces[i]->name, Race::listRaces[i]->table_talent[j]->name, Race::listRaces[i]->table_talent[j]->id);
+            printf("Talent %d of %ss, name = %s id = %d\n", j, Race::listRaces[i]->name, Race::listRaces[i]->table_talent[j]->name, Race::listRaces[i]->table_talent[j]->id);
         }
     }
 
     return 0;
 }
 
-int test_init_feats()
+int test_init_talents()
 {
     int i = 0;
 
-    printf("nb_feats = %d\n", Talent::nbFeats);
+    printf("nb_Talents = %d\n", Talent::nbTalents);
 
-    for(i=0; i<Talent::nbFeats; i++)
+    for(i=0; i<Talent::nbTalents; i++)
     {
-        printf("Feat %d : %s, type = %d, value %d\nDescription : %s\n", i, Talent::listFeats[i]->name, Talent::listFeats[i]->type, Talent::listFeats[i]->value, Talent::listFeats[i]->description);
+        printf("Talent %d : %s, type = %d, value %d\nDescription : %s\n", i, Talent::listTalents[i]->name, Talent::listTalents[i]->type, Talent::listTalents[i]->value, Talent::listTalents[i]->description);
     }
 
     return 0;

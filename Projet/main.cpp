@@ -19,7 +19,7 @@ using namespace std;
    Set them to false if you don't care
    */
 #define TEST_INIT true
-#define TEST_CAMPAGNE true
+#define TEST_CAMPAGNE false
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
@@ -80,8 +80,8 @@ int init_test_skills_feats_races()
         int r = 0;
         r += initSkills();
         r += test_init_skills();
-        r += initFeats();
-        r += test_init_feats();
+        r += initTalents();
+        r += test_init_talents();
         r += initRaces();
         r += test_init_races();
 
@@ -130,7 +130,7 @@ int init_test_campagne()
         name[n] = (char*)(malloc(sizeof(char)*256));
         char* numero = (char*)(malloc(sizeof(char)*16));
         itoa(n,numero,10);
-        strcat(name[n],"Zone ");
+        strcpy(name[n],"Zone ");
         strcat(name[n],numero);
         areas[n].setName(name[n]);
         description[n] = (char*)(malloc(sizeof(char)*1024));
@@ -146,9 +146,9 @@ int init_test_campagne()
     pnjs[0] = new PNJScenario(&areas[0],1);
     pnjs[1] = new Guard(&areas[0],11);
     pnjs[2] = new Guard(&areas[0],21);
-    pnjs[0]->setName("King Rat");
-    pnjs[1]->setName("Garde un peu nul");
-    pnjs[2]->setName("Garde trop baleze");
+    pnjs[0]->setName((char*)"King Rat");
+    pnjs[1]->setName((char*)"Garde un peu nul");
+    pnjs[2]->setName((char*)"Garde trop baleze");
     pnjs[1]->discuss = discussionQuest;
 
     /* We create a Personnage which will have to kill the King Rat to free the world from rat domination */

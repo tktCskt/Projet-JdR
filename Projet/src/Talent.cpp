@@ -3,17 +3,17 @@
 #include <string.h>
 #include <stdio.h>
 
-int Talent::nbFeats = 0;
-Talent** Talent::listFeats = (Talent**)(malloc(sizeof(Talent*)*300));
+int Talent::nbTalents = 0;
+Talent** Talent::listTalents = (Talent**)(malloc(sizeof(Talent*)*3000));
 
 Talent::Talent()
 {
-    Talent::listFeats[Talent::nbFeats] = this;
-    this->id = nbFeats;
+    Talent::listTalents[Talent::nbTalents] = this;
+    this->id = nbTalents;
     this->value = 0;
     this->name = (char*)"default name";
     this->description = (char*)"default description";
-    Talent::nbFeats++;
+    Talent::nbTalents++;
 }
 
 Talent::~Talent()
@@ -21,15 +21,15 @@ Talent::~Talent()
     //dtor
 }
 
-Talent* Talent::getFeatByName(const char* featName)
+Talent* Talent::getTalentByName(const char* talentName)
 {
     int i = 0;
 
-    for(i=0; i<Talent::nbFeats; i++)
+    for(i=0; i<Talent::nbTalents; i++)
     {
-        if(strcmp(featName,Talent::listFeats[i]->name) == 0)
+        if(strcmp(talentName,Talent::listTalents[i]->name) == 0)
         {
-            return Talent::listFeats[i];
+            return Talent::listTalents[i];
         }
     }
     return NULL;
