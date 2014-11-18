@@ -10,21 +10,21 @@ Race::Race()
     this->id = Race::nbRaces;
     Race::listRaces[Race::nbRaces] = this;
     Race::nbRaces++;
-    this->table_talent = (Talent**)malloc(sizeof(Talent*)*300);
-    this->nbTalents = 0;
+    this->listFeats = (Feat**)malloc(sizeof(Feat*)*30);
+    this->nbFeats = 0;
     this->name = (char*)"default name";
     this->description = (char*)"default description";
 }
 
 Race::~Race()
 {
-    free(this->table_talent);
+    free(this->listFeats);
 }
 
-int Race::addTalent(Talent* newTalent)
+int Race::addFeat(Feat* newFeat)
 {
-    this->table_talent[nbTalents] = newTalent;
-    this->nbTalents++;
+    this->listFeats[nbFeats] = newFeat;
+    this->nbFeats++;
 
     return 0;
 }

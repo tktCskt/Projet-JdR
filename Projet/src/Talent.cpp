@@ -32,5 +32,6 @@ Talent* Talent::getTalentByName(const char* talentName)
             return Talent::listTalents[i];
         }
     }
+    printf("Talent not found\n");
     return NULL;
 }

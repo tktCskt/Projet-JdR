@@ -41,6 +41,7 @@
 		<Unit filename="include/Competence.h" />
 		<Unit filename="include/Discussion.h" />
 		<Unit filename="include/Evolution.h" />
+		<Unit filename="include/Feat.h" />
 		<Unit filename="include/Guard.h" />
 		<Unit filename="include/Inventaire.h" />
 		<Unit filename="include/Loot.h" />
@@ -63,6 +64,7 @@
 		<Unit filename="src/Competence.cpp" />
 		<Unit filename="src/Discussion.cpp" />
 		<Unit filename="src/Evolution.cpp" />
+		<Unit filename="src/Feat.cpp" />
 		<Unit filename="src/Guard.cpp" />
 		<Unit filename="src/Inventaire.cpp" />
 		<Unit filename="src/Loot.cpp" />

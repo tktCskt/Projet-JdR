@@ -82,6 +82,8 @@ int init_test_skills_feats_races()
         r += test_init_skills();
         r += initTalents();
         r += test_init_talents();
+        r += initFeats();
+        r += test_init_feats();
         r += initRaces();
         r += test_init_races();
 

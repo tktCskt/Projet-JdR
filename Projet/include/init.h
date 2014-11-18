@@ -4,5 +4,6 @@
 int initRaces();
 int initTalents();
 int initSkills();
+int initFeats();
 
 #endif // INIT_H_INCLUDED

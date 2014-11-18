@@ -1,6 +1,7 @@
 #include "init.h"
 #include "Race.h"
 #include "Talent.h"
+#include "Feat.h"
 #include "Competence.h"
 #include <stdlib.h>
 #include <string.h>
@@ -14,42 +15,44 @@ int initRaces()
     Race* demiElfe = new Race();
     demiElfe->name = (char*)"Demi-Elfe";
     demiElfe->description = (char*)"La race des demi elfes";
+    demiElfe->addFeat(Feat::getFeatByName("Bonus ability"));
+    demiElfe->addFeat(Feat::getFeatByName("Keen senses"));
 
     Race* demiOrc = new Race();
     demiOrc->name = (char*)"Demi-Orc";
     demiOrc->description = (char*)"La race des demi orcs";
+    demiOrc->addFeat(Feat::getFeatByName("Bonus ability"));
+    demiOrc->addFeat(Feat::getFeatByName("Intimidating"));
 
     Race* elfe = new Race();
     elfe->name = (char*)"Elfe";
     elfe->description = (char*)"La race des elfes";
-    elfe->addTalent(Talent::getTalentByName("Intelligence modificator 2"));
-    elfe->addTalent(Talent::getTalentByName("Dexterity modificator 2"));
-    elfe->addTalent(Talent::getTalentByName("Constitution modificator -2"));
+    elfe->addFeat(Feat::getFeatByName("Elves abilities"));
+    elfe->addFeat(Feat::getFeatByName("Keen senses"));
 
     Race* gnome = new Race();
     gnome->name = (char*)"Gnome";
     gnome->description = (char*)"La race des gnomes";
-    gnome->addTalent(Talent::getTalentByName("Constitution modificator 2"));
-    gnome->addTalent(Talent::getTalentByName("Charisma modificator 2"));
-    gnome->addTalent(Talent::getTalentByName("Strength modificator -2"));
+    gnome->addFeat(Feat::getFeatByName("Gnomes abilities"));
+    gnome->addFeat(Feat::getFeatByName("Keen senses"));
 
     Race* halfelin = new Race();
     halfelin->name = (char*)"Halfelin";
     halfelin->description = (char*)"La race des halfelins";
-    halfelin->addTalent(Talent::getTalentByName("Charisma modificator 2"));
-    halfelin->addTalent(Talent::getTalentByName("Dexterity modificator 2"));
-    halfelin->addTalent(Talent::getTalentByName("Strength modificator -2"));
+    halfelin->addFeat(Feat::getFeatByName("Halfelins abilities"));
+    halfelin->addFeat(Feat::getFeatByName("Keen senses"));
+    halfelin->addFeat(Feat::getFeatByName("Sure-footed"));
 
     Race* humain = new Race();
     humain->name = (char*)"Humain";
     humain->description = (char*)"La race des humains";
+    humain->addFeat(Feat::getFeatByName("Bonus ability"));
 
     Race* nain = new Race();
     nain->name = (char*)"Nain";
     nain->description = (char*)"La race des nains";
-    nain->addTalent(Talent::getTalentByName("Constitution modificator 2"));
-    nain->addTalent(Talent::getTalentByName("Wisdom modificator 2"));
-    nain->addTalent(Talent::getTalentByName("Charisma modificator -2"));
+    nain->addFeat(Feat::getFeatByName("Dwarves abilities"));
+
 
     return 0;
 
@@ -491,6 +494,51 @@ int initSkills()
     umd->name = (char*)"Use magic device";
     umd->description = (char*)"Use magic device skill";
     umd->ability = CHARISMA;
+
+    return 0;
+}
+
+int initFeats()
+{
+    Feat* dwarf_f = new Feat();
+    dwarf_f->name = (char*)"Dwarves abilities";
+    dwarf_f->addTalent(Talent::getTalentByName("Constitution modificator 2"));
+    dwarf_f->addTalent(Talent::getTalentByName("Wisdom modificator 2"));
+    dwarf_f->addTalent(Talent::getTalentByName("Charisma modificator -2"));
+
+    Feat* elf_f = new Feat();
+    elf_f->name = (char*)"Elves abilities";
+    elf_f->addTalent(Talent::getTalentByName("Intelligence modificator 2"));
+    elf_f->addTalent(Talent::getTalentByName("Dexterity modificator 2"));
+    elf_f->addTalent(Talent::getTalentByName("Constitution modificator -2"));
+
+    Feat* halfelin_f = new Feat();
+    halfelin_f->name = (char*)"Halfelins abilities";
+    halfelin_f->addTalent(Talent::getTalentByName("Charisma modificator 2"));
+    halfelin_f->addTalent(Talent::getTalentByName("Dexterity modificator 2"));
+    halfelin_f->addTalent(Talent::getTalentByName("Strength modificator -2"));
+
+    Feat* gnome_f = new Feat();
+    gnome_f->name = (char*)"Gnomes abilities";
+    gnome_f->addTalent(Talent::getTalentByName("Constitution modificator 2"));
+    gnome_f->addTalent(Talent::getTalentByName("Charisma modificator 2"));
+    gnome_f->addTalent(Talent::getTalentByName("Strength modificator -2"));
+
+    Feat* bonus_f = new Feat();
+    bonus_f->name = (char*)"Bonus ability";
+
+    Feat* keenSenses = new Feat();
+    keenSenses->name = (char*) "Keen senses";
+    keenSenses->addTalent(Talent::getTalentByName("Perception modificator 2"));
+
+    Feat* intimidating = new Feat();
+    intimidating->name = (char*)"Intimidating";
+    intimidating->addTalent(Talent::getTalentByName("Intimidate modificator 2"));
+
+    Feat* sureFooted = new Feat();
+    sureFooted->name = (char*)"Sure-footed";
+    sureFooted->addTalent(Talent::getTalentByName("Acrobatics modificator 2"));
+    sureFooted->addTalent(Talent::getTalentByName("Climb modificator 2"));
 
     return 0;
 }

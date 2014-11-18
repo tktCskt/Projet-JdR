@@ -1,7 +1,7 @@
 #ifndef RACE_H
 #define RACE_H
 
-#include "Talent.h"
+#include "Feat.h"
 
 enum size_ {s_I,s_Min,s_TP,s_P,s_M,s_G,s_TG,s_Gig,s_C};
 class Race
@@ -9,15 +9,15 @@ class Race
      public:
         Race();
         virtual ~Race();
-        Talent** table_talent;
-        int nbTalents;
+        Feat** listFeats;
+        int nbFeats;
         static int nbRaces;
         static Race** listRaces;
         char* name;
         char* description;
 
         int getId();
-        int addTalent(Talent* newTalent);
+        int addFeat(Feat* newFeat);
         void setSize(enum size_ newSize);
         enum size_ getSize();
 
