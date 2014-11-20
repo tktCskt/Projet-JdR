@@ -13,6 +13,7 @@ class Race
         int nbFeats;
         static int nbRaces;
         static Race** listRaces;
+//        void save(MYSQL* con);
         char* name;
         char* description;
 

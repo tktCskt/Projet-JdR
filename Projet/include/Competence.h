@@ -1,6 +1,9 @@
 #ifndef COMPETENCE_H
 #define COMPETENCE_H
 
+#include <winsock.h>
+#include <MYSQL/mysql.h>
+
 #define STRENGTH 1
 #define DEXTERITY 2
 #define CONSTITUTION 3
@@ -13,7 +16,7 @@ class Competence
     public:
         Competence();
         virtual ~Competence();
-
+        void save(MYSQL* con);
         int id;
         int ability;
         static int nbSkills;

@@ -142,7 +142,7 @@
 	"Guard.h"
 	<stdio.h>
 
-1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\main.cpp
+1416437352 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\main.cpp
 	<iostream>
 	"Cell.h"
 	"Area.h"
@@ -152,10 +152,20 @@
 	<stdlib.h>
 	<string.h>
 	<Guard.h>
+	"Race.h"
+	"Classe.h"
+	"Personnage.h"
+	"init.h"
+	"Competence.h"
+	"test_init.h"
+	<winsock.h>
+	<MYSQL/mysql.h>
+	<unistd.h>
+	<sys/types.h>
 
 1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\cell.h
 
-1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\area.h
+1416319957 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\area.h
 	"Cell.h"
 
 1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\personnagescenario.h
@@ -163,17 +173,19 @@
 	"Cell.h"
 	"Area.h"
 
-1415617307 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\personnage.h
+1415895431 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\personnage.h
 	<iostream>
 	<string>
+	"Classe.h"
+	"Race.h"
 
-1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\pnj.h
+1416319957 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\pnj.h
 	"Monstre.h"
 	"Area.h"
 	"Cell.h"
 	<stdio.h>
 
-1415615815 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\monstre.h
+1415895431 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\monstre.h
 	<iostream>
 	<string>
 	"loot.h"
@@ -188,10 +200,10 @@
 	<iostream>
 	<string>
 
-1415610513 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\guard.h
+1416319957 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\guard.h
 	"PNJ.h"
 
-1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\area.cpp
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\area.cpp
 	"Area.h"
 
 1415612543 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\bonus.cpp
@@ -205,16 +217,17 @@
 	<iostream>
 	<string>
 
-1415612491 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\talent.h
+1416319958 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\talent.h
 
 1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\cell.cpp
 	"Cell.h"
 
-1415614282 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\classe.cpp
+1415895431 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\classe.cpp
 	"classe.h"
 	"evolution.h"
+	"stdlib.h"
 
-1415614215 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\classe.h
+1415895431 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\classe.h
 	"evolution.h"
 	<iostream>
 	<string>
@@ -225,10 +238,14 @@
 	<iostream>
 	<string>
 
-1415614386 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\competence.cpp
+1416327518 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\competence.cpp
 	"competence.h"
+	<stdlib.h>
+	<string.h>
 
-1415614355 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\competence.h
+1416326841 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\competence.h
+	<winsock.h>
+	<MYSQL/mysql.h>
 
 1415610513 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\discussion.cpp
 	"Discussion.h"
@@ -270,20 +287,23 @@
 	"PNJ.h"
 	"stdio.h"
 
-1415617213 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\personnage.cpp
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\personnage.cpp
 	"personnage.h"
 	<string>
+	<string.h>
+	<stdlib.h>
 
 1415610514 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\personnagescenario.cpp
 	"PersonnageScenario.h"
 	<stdio.h>
 
-1415617488 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\race.cpp
+1416437380 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\race.cpp
 	"race.h"
+	<stdlib.h>
+	<string.h>
 
-1415617499 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\race.h
-	<iostream>
-	<string>
+1416437371 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\race.h
+	"Feat.h"
 
 1415610514 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\scenario.cpp
 	"Scenario.h"
@@ -292,8 +312,11 @@
 	"Area.h"
 	<list>
 
-1415617511 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\talent.cpp
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\talent.cpp
 	"talent.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
 
 1415617536 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\utilisateur.cpp
 	"utilisateur.h"
@@ -629,4 +652,35 @@
 
 1416313201 c:\users\xavier\desktop\projet-jdr\projet\include\feat.h
 	"Talent.h"
+
+1416319957 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\feat.h
+	"Talent.h"
+
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\feat.cpp
+	"Feat.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\init.cpp
+	"init.h"
+	"Race.h"
+	"Talent.h"
+	"Feat.h"
+	"Competence.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1416319958 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\init.h
+
+1416319958 source:c:\users\administrator\desktop\projetjdr\projet-jdr\projet\src\test_init.cpp
+	"test_init.h"
+	"Race.h"
+	"Talent.h"
+	"Competence.h"
+	<stdio.h>
+	<string.h>
+
+1416319958 c:\users\administrator\desktop\projetjdr\projet-jdr\projet\include\test_init.h
 

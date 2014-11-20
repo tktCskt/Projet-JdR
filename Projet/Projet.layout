@@ -1,143 +1,121 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1998" topLine="65" />
-		</Cursor>
+	<File name="include\Area.h" open="0" top="0" tabpos="20">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="include\Feat.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="321" topLine="0" />
-		</Cursor>
+	<File name="include\Bonus.h" open="0" top="0" tabpos="19">
+		<Cursor position="201" topLine="0" />
 	</File>
-	<File name="src\Competence.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="465" topLine="0" />
-		</Cursor>
+	<File name="include\Cell.h" open="0" top="0" tabpos="18">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src\PersonnageScenario.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="855" topLine="0" />
-		</Cursor>
+	<File name="include\Classe.h" open="0" top="0" tabpos="17">
+		<Cursor position="1174" topLine="11" />
 	</File>
-	<File name="include\Cell.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="515" topLine="0" />
-		</Cursor>
+	<File name="include\Competence.h" open="1" top="0" tabpos="4">
+		<Cursor position="344" topLine="0" />
 	</File>
-	<File name="src\test_init.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1472" topLine="16" />
-		</Cursor>
+	<File name="include\Discussion.h" open="0" top="0" tabpos="15">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src\Race.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="573" topLine="4" />
-		</Cursor>
+	<File name="include\Evolution.h" open="0" top="0" tabpos="14">
+		<Cursor position="267" topLine="0" />
 	</File>
-	<File name="src\Personnage.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="118" topLine="0" />
-		</Cursor>
+	<File name="include\Guard.h" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src\Guard.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="200" topLine="0" />
-		</Cursor>
+	<File name="include\Inventaire.h" open="0" top="0" tabpos="13">
+		<Cursor position="205" topLine="0" />
 	</File>
-	<File name="src\Feat.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="79" topLine="0" />
-		</Cursor>
+	<File name="include\Loot.h" open="0" top="0" tabpos="12">
+		<Cursor position="237" topLine="0" />
 	</File>
-	<File name="src\Area.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="735" topLine="17" />
-		</Cursor>
+	<File name="include\Monstre.h" open="0" top="0" tabpos="11">
+		<Cursor position="346" topLine="0" />
 	</File>
-	<File name="include\Personnage.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="238" topLine="0" />
-		</Cursor>
+	<File name="include\Objet.h" open="0" top="0" tabpos="10">
+		<Cursor position="391" topLine="0" />
 	</File>
-	<File name="include\Race.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="402" topLine="0" />
-		</Cursor>
+	<File name="include\PNJ.h" open="0" top="0" tabpos="9">
+		<Cursor position="0" topLine="17" />
 	</File>
-	<File name="include\init.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="125" topLine="0" />
-		</Cursor>
+	<File name="include\Personnage.h" open="0" top="0" tabpos="21">
+		<Cursor position="2114" topLine="72" />
 	</File>
-	<File name="include\PNJ.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1010" topLine="2" />
-		</Cursor>
+	<File name="include\PersonnageScenario.h" open="0" top="0" tabpos="8">
+		<Cursor position="0" topLine="3" />
 	</File>
-	<File name="include\Scenario.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="403" topLine="0" />
-		</Cursor>
+	<File name="include\Race.h" open="1" top="0" tabpos="3">
+		<Cursor position="298" topLine="0" />
 	</File>
-	<File name="include\test_init.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="159" topLine="0" />
-		</Cursor>
+	<File name="include\RaceTalent.h" open="1" top="1" tabpos="7">
+		<Cursor position="201" topLine="0" />
 	</File>
-	<File name="include\Guard.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="228" topLine="0" />
-		</Cursor>
+	<File name="include\Scenario.h" open="0" top="0" tabpos="7">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="include\Area.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="553" topLine="0" />
-		</Cursor>
+	<File name="include\Talent.h" open="0" top="0" tabpos="6">
+		<Cursor position="425" topLine="28" />
 	</File>
-	<File name="include\Monstre.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="199" topLine="0" />
-		</Cursor>
+	<File name="include\Utilisateur.h" open="0" top="0" tabpos="0">
+		<Cursor position="165" topLine="0" />
 	</File>
-	<File name="include\Talent.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1170" topLine="18" />
-		</Cursor>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1851" topLine="63" />
 	</File>
-	<File name="src\Cell.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="17" topLine="0" />
-		</Cursor>
+	<File name="src\Area.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src\PNJ.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="68" />
-		</Cursor>
+	<File name="src\Bonus.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="106" topLine="0" />
 	</File>
-	<File name="include\Competence.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="0" />
-		</Cursor>
+	<File name="src\Cell.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src\Talent.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="771" topLine="0" />
-		</Cursor>
+	<File name="src\Classe.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="635" topLine="28" />
 	</File>
-	<File name="include\PersonnageScenario.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="91" topLine="0" />
-		</Cursor>
+	<File name="src\Competence.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="372" topLine="0" />
 	</File>
-	<File name="src\init.cpp" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1875" topLine="17" />
-		</Cursor>
-		<Folding>
-			<Collapse line="61" />
-			<Collapse line="366" />
-		</Folding>
+	<File name="src\Evolution.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="123" topLine="0" />
+	</File>
+	<File name="src\Guard.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\Inventaire.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="130" topLine="0" />
+	</File>
+	<File name="src\Loot.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="103" topLine="0" />
+	</File>
+	<File name="src\Monstre.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="150" topLine="0" />
+	</File>
+	<File name="src\Objet.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="414" topLine="21" />
+	</File>
+	<File name="src\PNJ.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\Personnage.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="3404" topLine="205" />
+	</File>
+	<File name="src\PersonnageScenario.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\Race.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="1328" topLine="22" />
+	</File>
+	<File name="src\Talent.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="378" topLine="0" />
+	</File>
+	<File name="src\Utilisateur.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="123" topLine="0" />
+	</File>
+	<File name="src\init.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="4949" topLine="51" />
 	</File>
 </CodeBlocks_layout_file>

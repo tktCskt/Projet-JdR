@@ -11,7 +11,12 @@
 #include "Classe.h"
 #include "Personnage.h"
 #include "init.h"
+#include "Competence.h"
 #include "test_init.h"
+#include <winsock.h>
+#include <MYSQL/mysql.h>
+#include <unistd.h>
+#include <sys/types.h>
 
 using namespace std;
 
@@ -20,6 +25,7 @@ using namespace std;
    */
 #define TEST_INIT true
 #define TEST_CAMPAGNE false
+#define TEST_BDD true
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
@@ -45,6 +51,7 @@ void combat(PNJScenario** npcList, PNJScenario* npc);
 bool attaquer(PNJScenario* npc);
 void mort(PNJScenario* npc);
 
+void add_competence();
 Personnage* newCharacter();
 
 /**
@@ -60,7 +67,13 @@ int main()
         if (init_test_skills_feats_races()!=0)
             return 1;
     }
-
+    //Test BDD
+    if(TEST_BDD)
+    {
+        // pour faire marcher, n'oubliez pas de clique droit sur répertoire projet, build option et créer un lien vers le librairie libmysqlclient.a
+     add_competence();
+    // add_race();
+    }
     // ********** Initialisation Campagne **********
     if (TEST_CAMPAGNE)
     {
@@ -71,6 +84,68 @@ int main()
     return 0;
 }
 
+void add_competence()
+{
+
+    MYSQL *con = mysql_init(NULL);
+      if (con == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          exit(1);
+      }
+      // à tester avec une vraie adresse ip, pas en local
+        if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
+              "bddjeuderoles", 0, NULL, 0) == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          mysql_close(con);
+      }
+        mysql_query(con,"DROP TABLE competence;");
+
+        mysql_query(con,"CREATE TABLE competence(id_comp INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_comp),ability INTEGER NOT NULL,name VARCHAR(45) NOT NULL,description VARCHAR(300) NOT NULL, nb_feats INTEGER);");
+        mysql_query(con, "INSERT INTO competence(ability, name, description) VALUES(1,\"lol\",\"lolz\");");
+        int i = 0;
+    for(i = 0; i < Competence::nbSkills; i++)
+    {
+        Competence::listSkills[i]->save(con);
+    }
+    /*competences*/
+    /*delete  //c'est fait
+    recreer  // c'est fait
+    int i = 0;
+    for(i = 0; i < Competence::nbSkills; i++)
+    {
+        Competence::listSkills[i]->save();
+    }
+    */
+}
+/*
+void add_race()
+{
+    MYSQL *con = mysql_init(NULL);
+      if (con == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          exit(1);
+      }
+      // à tester avec une vraie adresse ip, pas en local
+        if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
+              "bddjeuderoles", 0, NULL, 0) == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          mysql_close(con);
+      }
+        mysql_query(con,"DROP TABLE race;");
+
+        mysql_query(con,"CREATE TABLE race(id_race INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_race),name VARCHAR(45) NOT NULL,description VARCHAR(300) NOT NULL,);");
+        mysql_query(con, "INSERT INTO race(name, description) VALUES(\"lol\",\"lolz\");");
+        int i = 0;
+    for(i = 0; i < race::nbRaces; i++)
+    {
+        race::listRaces[i]->save(con);
+    }
+}
+*/
 /**
  * Initialize the creation of skills / feats / races classes for test use
  * @return 0 if it went well
