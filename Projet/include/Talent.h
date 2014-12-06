@@ -1,6 +1,7 @@
 #ifndef TALENT_H
 #define TALENT_H
-
+#include <winsock.h>
+#include <MYSQL/mysql.h>
 /*Types */
 #define STRENGTH_MODIF 1
 #define DEXTERITY_MODIF 2
@@ -41,6 +42,8 @@ class Talent
     public:
         Talent();
         virtual ~Talent();
+        void save(MYSQL* con);
+        char* getName();
 
         char* name;
         char* description;

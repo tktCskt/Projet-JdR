@@ -1,7 +1,8 @@
 #include "race.h"
+#include "raceFeat.h"
 #include <stdlib.h>
 #include <string.h>
-
+#include <vector>
 int Race::nbRaces = 0;
 Race** Race::listRaces = (Race**)(malloc(sizeof(Race*)*50));
 
@@ -21,30 +22,37 @@ Race::~Race()
     free(this->listFeats);
 }
 
-/*void Race::save(MYSQL* con)
+void Race::save(MYSQL* con, int i)
  {
+     MYSQL_RES *result = NULL;
+     MYSQL_ROW rowFeat = NULL;
      char* nbFeatsString = (char*)malloc(10);
      itoa(this->nbFeats, nbFeatsString,10);
 
      char* request = (char*)malloc(sizeof(char) * 1024);
-     strcpy(request,"INSERT INTO competence(name, description, nb_feats) VALUES ( \"");
+     strcpy(request,"INSERT INTO race(name, description, nb_feats) VALUES ( \"");
      strcat(request, this->name);
      strcat(request, "\",\"");
      strcat(request, this->description);
-     strcat(request, "\", (");
+     strcat(request, "\", ");
      strcat(request, nbFeatsString);
      strcat(request, ");");
      // on considère que les talents ont déjà été créés dans la BDD
      mysql_query(con, request);
-       mysql_query(con, "SELECT COUNT(*) FROM table");
-           result = mysql_use_result(con);
-           id=&result
-     for(i = 0; i < race::nbFeats; i++)
+     for(int j = 1; j < Race::nbFeats; j++)
      {
-          RaceTalent::listFeats[i]->save(con,id);
+        // méthode pour récupérer l'id_talent du talent à relier
+        strcpy(request,"SELECT id_feat FROM feat WHERE name = \"");
+        strcat(request, Feat::listFeats[j]->getName());
+        strcat(request, "\";");
+        mysql_query(con, request);
+        result = mysql_use_result(con);
+        rowFeat =  mysql_fetch_row(result);
+        int l= (int) rowFeat[0];
+        RaceFeat::save(con, i, l);
      }
  }
-*/
+
 int Race::addFeat(Feat* newFeat)
 {
     this->listFeats[nbFeats] = newFeat;

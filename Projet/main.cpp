@@ -52,6 +52,10 @@ bool attaquer(PNJScenario* npc);
 void mort(PNJScenario* npc);
 
 void add_competence();
+void add_talent();
+void add_feat();
+void add_race();
+
 Personnage* newCharacter();
 
 /**
@@ -70,9 +74,13 @@ int main()
     //Test BDD
     if(TEST_BDD)
     {
-        // pour faire marcher, n'oubliez pas de clique droit sur rÈpertoire projet, build option et crÈer un lien vers le librairie libmysqlclient.a
+        // pour faire marcher, n'oubliez pas de clique droit sur rÈß±ertoire projet, build option et crÈ¶•r un lien vers le librairie libmysqlclient.a
      add_competence();
-    // add_race();
+     add_talent();
+     // √ßa coince au niveau de feat talent
+     //add_feat();
+     //add_race();
+
     }
     // ********** Initialisation Campagne **********
     if (TEST_CAMPAGNE)
@@ -93,7 +101,7 @@ void add_competence()
           fprintf(stderr, "%s\n", mysql_error(con));
           exit(1);
       }
-      // ‡ tester avec une vraie adresse ip, pas en local
+      // „Éªtester avec une vraie adresse ip, pas en local
         if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
               "bddjeuderoles", 0, NULL, 0) == NULL)
       {
@@ -101,25 +109,86 @@ void add_competence()
           mysql_close(con);
       }
         mysql_query(con,"DROP TABLE competence;");
-
-        mysql_query(con,"CREATE TABLE competence(id_comp INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_comp),ability INTEGER NOT NULL,name VARCHAR(45) NOT NULL,description VARCHAR(300) NOT NULL, nb_feats INTEGER);");
-        mysql_query(con, "INSERT INTO competence(ability, name, description) VALUES(1,\"lol\",\"lolz\");");
+        /* mysql_query(con,"DROP TABLE objet;");
+        mysql_query(con,"DROP TABLE personnage;");
+        mysql_query(con,"DROP TABLE classe;");
+        mysql_query(con,"DROP TABLE classe_jet_vig;");
+        mysql_query(con,"DROP TABLE classe_jet_ref;");
+        mysql_query(con,"DROP TABLE classe_jet_vol;");
+        mysql_query(con,"DROP TABLE classe_competence;");
+        mysql_query(con,"DROP TABLE classe_competence_classe;");
+        mysql_query(con,"DROP TABLE classe_race_req;");
+        mysql_query(con,"DROP TABLE classe_alignement;");
+        mysql_query(con,"DROP TABLE classe_bba;");
+        mysql_query(con,"DROP TABLE inventaire;");
+        mysql_query(con,"DROP TABLE loot;");
+        mysql_query(con,"DROP TABLE monstre;");
+        mysql_query(con,"DROP TABLE new_table;");*/
+        mysql_query(con,"CREATE TABLE competence(id_comp INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_comp), ability INTEGER NOT NULL,name VARCHAR(45) NOT NULL,description VARCHAR(300) NOT NULL);");
+       // mysql_query(con, "INSERT INTO competence(ability, name, description) VALUES(1,\"lol\",\"lolz\");");
         int i = 0;
     for(i = 0; i < Competence::nbSkills; i++)
     {
         Competence::listSkills[i]->save(con);
     }
-    /*competences*/
-    /*delete  //c'est fait
-    recreer  // c'est fait
-    int i = 0;
-    for(i = 0; i < Competence::nbSkills; i++)
-    {
-        Competence::listSkills[i]->save();
-    }
-    */
 }
-/*
+
+void add_talent()
+{
+
+    MYSQL *con = mysql_init(NULL);
+      if (con == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          exit(1);
+      }
+      // „Éªtester avec une vraie adresse ip, pas en local
+        if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
+              "bddjeuderoles", 0, NULL, 0) == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          mysql_close(con);
+      }
+        mysql_query(con,"DROP TABLE talent;");
+
+        mysql_query(con,"CREATE TABLE Talent(id_talent INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_talent), name VARCHAR(45) NOT NULL, description VARCHAR(300) NOT NULL, type INTEGER, value INTEGER);");
+        //mysql_query(con, "INSERT INTO talent(name, description, type, value) VALUES(\"lol\",\"lolz\", 0, 0);");
+        int i = 0;
+    for(i = 0; i < Talent::nbTalents; i++)
+    {
+        Talent::listTalents[i]->save(con);
+    }
+}
+
+void add_feat()
+{
+
+    MYSQL *con = mysql_init(NULL);
+      if (con == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          exit(1);
+      }
+      // „Éªtester avec une vraie adresse ip, pas en local
+        if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
+              "bddjeuderoles", 0, NULL, 0) == NULL)
+      {
+          fprintf(stderr, "%s\n", mysql_error(con));
+          mysql_close(con);
+      }
+        mysql_query(con,"DROP TABLE feat;");
+        mysql_query(con,"DROP TABLE feat_talent;");
+
+        mysql_query(con,"CREATE TABLE feat(id_feat INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_feat), name VARCHAR(45) NOT NULL, nb_talents INTEGER);");
+        mysql_query(con,"CREATE TABLE feat_talent(id_feat INTEGER NOT NULL, id_talent INTEGER NOT NULL);");
+        //mysql_query(con, "INSERT INTO feat(name, nb_talents) VALUES(\"lol\",1);");
+        int i = 0;
+    for(i = 0; i < Feat::nbFeats; i++)
+    {
+        Feat::listFeats[i]->save(con, i);
+    }
+}
+
 void add_race()
 {
     MYSQL *con = mysql_init(NULL);
@@ -128,7 +197,7 @@ void add_race()
           fprintf(stderr, "%s\n", mysql_error(con));
           exit(1);
       }
-      // ‡ tester avec une vraie adresse ip, pas en local
+      // „Éªtester avec une vraie adresse ip, pas en local
         if (mysql_real_connect(con, "localhost", "root", "morganeetclaire45",
               "bddjeuderoles", 0, NULL, 0) == NULL)
       {
@@ -136,16 +205,20 @@ void add_race()
           mysql_close(con);
       }
         mysql_query(con,"DROP TABLE race;");
+        mysql_query(con,"DROP TABLE race_feat;");
+
 
         mysql_query(con,"CREATE TABLE race(id_race INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id_race),name VARCHAR(45) NOT NULL,description VARCHAR(300) NOT NULL,);");
+        mysql_query(con,"CREATE TABLE race_feat(id_race INTEGER NOT NULL ,id_feat INTEGER NOT NULL);");
         mysql_query(con, "INSERT INTO race(name, description) VALUES(\"lol\",\"lolz\");");
+
         int i = 0;
-    for(i = 0; i < race::nbRaces; i++)
+    for(i = 0; i < Race::nbRaces; i++)
     {
-        race::listRaces[i]->save(con);
+        Race::listRaces[i]->save(con, i);
     }
 }
-*/
+
 /**
  * Initialize the creation of skills / feats / races classes for test use
  * @return 0 if it went well
@@ -367,7 +440,7 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
     scanf("%d",&choice); printf("\n");
      switch(choice)
         {
-        case 1 : // Avancer horizontalement aka ‡ droite
+        case 1 : // Avancer horizontalement aka „Éªdroite
             if(!(PJ->getCell()->getX() == TAILLE_ZONE_X-1))
             {
                  if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()+1,PJ->getCell()->getY()) == 0)
@@ -384,7 +457,7 @@ int menu_deplacer (PersonnageScenario* PJ, Area* areas)
                 printf("Vous ne pouvez pas avancer, PJ->idCell=%d\n\n",PJ->getCell()->getId());
             }
             break;
-        case 2 : // Reculer horizontalement aka ‡ gauche
+        case 2 : // Reculer horizontalement aka „Éªgauche
             if(!(PJ->getCell()->getX() == 0))
             {
                 if(PJ->moveByCoordonate(PJ->getArea(),PJ->getCell()->getX()-1,PJ->getCell()->getY()) == 0)
@@ -453,7 +526,7 @@ int menu_interraction(PersonnageScenario* PJ, PNJScenario** npcList)
     int x,y;
     PJ->getArea()->getCoordonate(PJ->getCell()->getId(),&x,&y);
     printf("Cell id = %d, x = %d, y = %d\n\n",PJ->getCell()->getId(),x,y);
-    //bug ici apres dÈplacement + 3 "agir"
+    //bug ici apres dÈß±lacement + 3 "agir"
     int r = getNPCNearTo(PJ->getArea(),PJ->getCell()->getId(),npcList,pnjs2);
 
     if (r==0) { // Aucun PNJ
@@ -531,7 +604,7 @@ void combat(PNJScenario** npcList, PNJScenario* npc) {
         switch(choice) {
             case 1:
                 if (attaquer(npc)) { // le npc est mort
-                    /* on dÈtruit le npc */
+                    /* on dÈ®Åruit le npc */
                     int n = PNJScenario::nbNPC;
                     for (int i=0; i<n; i++) {
                         if (npcList[i]!=NULL && npcList[i]==npc) {
@@ -545,7 +618,7 @@ void combat(PNJScenario** npcList, PNJScenario* npc) {
                 }
                 break;
             default:
-                printf("%s vous regarde avec dÈdain alors que vous fuyez\n\n", npc->getName());
+                printf("%s vous regarde avec dÈ¶òain alors que vous fuyez\n\n", npc->getName());
                 mechant=false;
         }
     }

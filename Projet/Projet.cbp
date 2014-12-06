@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add library="H:\Users\Administrator\Desktop\CodeBlocks\MinGW\lib\libmysqlclient.a" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin\Release\Projet" prefix_auto="1" extension_auto="1" />
@@ -27,6 +30,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="H:\Users\Administrator\Desktop\CodeBlocks\MinGW\lib\libmysqlclient.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -45,6 +49,7 @@
 		<Unit filename="include\Discussion.h" />
 		<Unit filename="include\Evolution.h" />
 		<Unit filename="include\Feat.h" />
+		<Unit filename="include\FeatTalent.h" />
 		<Unit filename="include\Guard.h" />
 		<Unit filename="include\Inventaire.h" />
 		<Unit filename="include\Loot.h" />
@@ -54,7 +59,7 @@
 		<Unit filename="include\Personnage.h" />
 		<Unit filename="include\PersonnageScenario.h" />
 		<Unit filename="include\Race.h" />
-		<Unit filename="include\RaceTalent.h" />
+		<Unit filename="include\RaceFeat.h" />
 		<Unit filename="include\Scenario.h" />
 		<Unit filename="include\Talent.h" />
 		<Unit filename="include\Utilisateur.h" />
@@ -69,6 +74,7 @@
 		<Unit filename="src\Discussion.cpp" />
 		<Unit filename="src\Evolution.cpp" />
 		<Unit filename="src\Feat.cpp" />
+		<Unit filename="src\FeatTalent.cpp" />
 		<Unit filename="src\Guard.cpp" />
 		<Unit filename="src\Inventaire.cpp" />
 		<Unit filename="src\Loot.cpp" />
@@ -78,7 +84,7 @@
 		<Unit filename="src\Personnage.cpp" />
 		<Unit filename="src\PersonnageScenario.cpp" />
 		<Unit filename="src\Race.cpp" />
-		<Unit filename="src\RaceTalent.cpp" />
+		<Unit filename="src\RaceFeat.cpp" />
 		<Unit filename="src\Scenario.cpp" />
 		<Unit filename="src\Talent.cpp" />
 		<Unit filename="src\Utilisateur.cpp" />

@@ -1,9 +1,7 @@
 #ifndef COMPETENCE_H
 #define COMPETENCE_H
-
 #include <winsock.h>
 #include <MYSQL/mysql.h>
-
 #define STRENGTH 1
 #define DEXTERITY 2
 #define CONSTITUTION 3
