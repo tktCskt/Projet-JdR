@@ -11,8 +11,8 @@ Competence::Competence()
     Competence::listSkills[Competence::nbSkills] = this;
     this->id = nbSkills;
     Competence::nbSkills++;
-    this->name = (char*)"default name";
-    this->description = (char*)"default description";
+    this->name = (char*)malloc(sizeof(char)*128);
+    this->description = (char*)malloc(sizeof(char)*1024);
 }
 
  void Competence::save(MYSQL* con)

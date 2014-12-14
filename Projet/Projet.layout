@@ -1,46 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="include\Competence.h" open="1" top="0" tabpos="8">
-		<Cursor position="42" topLine="0" />
+	<File name="src\Personnage.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4021" topLine="84" />
+		</Cursor>
 	</File>
-	<File name="include\Feat.h" open="1" top="0" tabpos="7">
-		<Cursor position="32" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7789" topLine="78" />
+		</Cursor>
+		<Folding>
+			<Collapse line="70" />
+			<Collapse line="76" />
+			<Collapse line="87" />
+			<Collapse line="92" />
+			<Collapse line="100" />
+			<Collapse line="141" />
+			<Collapse line="168" />
+			<Collapse line="197" />
+		</Folding>
 	</File>
-	<File name="include\FeatTalent.h" open="1" top="0" tabpos="6">
-		<Cursor position="283" topLine="0" />
+	<File name="include\Classe.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="703" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include\Race.h" open="1" top="0" tabpos="11">
-		<Cursor position="50" topLine="0" />
+	<File name="include\Competence.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include\RaceFeat.h" open="1" top="0" tabpos="9">
-		<Cursor position="298" topLine="0" />
+	<File name="include\FeatTalent.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include\Talent.h" open="1" top="0" tabpos="13">
-		<Cursor position="94" topLine="0" />
+	<File name="src\Talent.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="368" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="1966" topLine="63" />
+	<File name="src\Race.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src\Classe.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="267" topLine="34" />
+	<File name="src\Utilisateur.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src\Feat.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="441" topLine="27" />
+	<File name="src\init.cpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="230" topLine="21" />
+		</Cursor>
+		<Folding>
+			<Collapse line="17" />
+		</Folding>
 	</File>
-	<File name="src\FeatTalent.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="include\Feat.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src\Race.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="1644" topLine="0" />
+	<File name="include\Personnage.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="500" topLine="9" />
+		</Cursor>
 	</File>
-	<File name="src\RaceFeat.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="108" topLine="0" />
+	<File name="src\RaceFeat.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src\Talent.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="include\Race.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src\Utilisateur.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="src\Feat.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\FeatTalent.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\RaceFeat.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Talent.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="828" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include\init.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="142" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Classe.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="109" topLine="4" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

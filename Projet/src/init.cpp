@@ -3,12 +3,16 @@
 #include "Talent.h"
 #include "Feat.h"
 #include "Competence.h"
+#include "Classe.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 
 #define RANGE_MIN -10
 #define RANGE_MAX 10
+
+void setSt(int* t, int v);
+void setBab(int* t, int v);
 
 int initRaces()
 {
@@ -98,11 +102,11 @@ int initTalents()
 
     for(i=RANGE_MIN; i<=RANGE_MAX; i++)
     {
-        char* value = (char*)malloc(sizeof(char)*16);
+        char* value = (char*)malloc(sizeof(char)*64);
         itoa(i,value,10);
 
+
         t_strengthModif[i] = new Talent();
-        t_strengthModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_strengthModif[i]->name,"Strength modificator ");
         strcat(t_strengthModif[i]->name,value);
         t_strengthModif[i]->description = (char*)"Modify strength";
@@ -110,7 +114,6 @@ int initTalents()
         t_strengthModif[i]->value = i;
 
         t_dexterityModif[i] = new Talent();
-        t_dexterityModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_dexterityModif[i]->name,"Dexterity modificator ");
         strcat(t_dexterityModif[i]->name,value);
         t_dexterityModif[i]->description = (char*)"Modify dexterity";
@@ -118,7 +121,6 @@ int initTalents()
         t_dexterityModif[i]->value = i;
 
         t_constitutionModif[i] = new Talent();
-        t_constitutionModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_constitutionModif[i]->name,"Constitution modificator ");
         strcat(t_constitutionModif[i]->name,value);
         t_constitutionModif[i]->description = (char*)"Modify constitution";
@@ -126,7 +128,6 @@ int initTalents()
         t_constitutionModif[i]->value = i;
 
         t_intelligenceModif[i] = new Talent();
-        t_intelligenceModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_intelligenceModif[i]->name,"Intelligence modificator ");
         strcat(t_intelligenceModif[i]->name,value);
         t_intelligenceModif[i]->description = (char*)"Modify intelligence";
@@ -134,7 +135,6 @@ int initTalents()
         t_intelligenceModif[i]->value = i;
 
         t_wisdomModif[i] = new Talent();
-        t_wisdomModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_wisdomModif[i]->name,"Wisdom modificator ");
         strcat(t_wisdomModif[i]->name,value);
         t_wisdomModif[i]->description = (char*)"Modify wisdom";
@@ -142,7 +142,6 @@ int initTalents()
         t_wisdomModif[i]->value = i;
 
         t_charismaModif[i] = new Talent();
-        t_charismaModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_charismaModif[i]->name,"Charisma modificator ");
         strcat(t_charismaModif[i]->name,value);
         t_charismaModif[i]->description = (char*)"Modify charisma";
@@ -150,7 +149,6 @@ int initTalents()
         t_charismaModif[i]->value = i;
 
         t_acrobaticsModif[i] = new Talent();
-        t_acrobaticsModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_acrobaticsModif[i]->name,"Acrobatics modificator ");
         strcat(t_acrobaticsModif[i]->name,value);
         t_acrobaticsModif[i]->description = (char*)"Modify acrobatics";
@@ -158,7 +156,6 @@ int initTalents()
         t_acrobaticsModif[i]->value = i;
 
         t_appraiseModif[i] = new Talent();
-        t_appraiseModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_appraiseModif[i]->name,"Appraise modificator ");
         strcat(t_appraiseModif[i]->name,value);
         t_appraiseModif[i]->description = (char*)"Modify appraise";
@@ -166,7 +163,6 @@ int initTalents()
         t_appraiseModif[i]->value = i;
 
         t_bluffModif[i] = new Talent();
-        t_bluffModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_bluffModif[i]->name,"Bluff modificator ");
         strcat(t_bluffModif[i]->name,value);
         t_bluffModif[i]->description = (char*)"Modify bluff";
@@ -174,7 +170,6 @@ int initTalents()
         t_bluffModif[i]->value = i;
 
         t_climbModif[i] = new Talent();
-        t_climbModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_climbModif[i]->name,"Climb modificator ");
         strcat(t_climbModif[i]->name,value);
         t_climbModif[i]->description = (char*)"Modify climb";
@@ -182,7 +177,6 @@ int initTalents()
         t_climbModif[i]->value = i;
 
         t_craftModif[i] = new Talent();
-        t_craftModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_craftModif[i]->name,"Craft modificator ");
         strcat(t_craftModif[i]->name,value);
         t_craftModif[i]->description = (char*)"Modify craft";
@@ -190,7 +184,6 @@ int initTalents()
         t_craftModif[i]->value = i;
 
         t_diplomacyModif[i] = new Talent();
-        t_diplomacyModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_diplomacyModif[i]->name,"Diplomacy modificator ");
         strcat(t_diplomacyModif[i]->name,value);
         t_diplomacyModif[i]->description = (char*)"Modify diplomacy";
@@ -198,7 +191,6 @@ int initTalents()
         t_diplomacyModif[i]->value = i;
 
         t_disableDeviceModif[i] = new Talent();
-        t_disableDeviceModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_disableDeviceModif[i]->name,"DisableDevice modificator ");
         strcat(t_disableDeviceModif[i]->name,value);
         t_disableDeviceModif[i]->description = (char*)"Modify disableDevice";
@@ -206,7 +198,6 @@ int initTalents()
         t_disableDeviceModif[i]->value = i;
 
         t_disguiseModif[i] = new Talent();
-        t_disguiseModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_disguiseModif[i]->name,"Disguise modificator ");
         strcat(t_disguiseModif[i]->name,value);
         t_disguiseModif[i]->description = (char*)"Modify disguise";
@@ -214,7 +205,6 @@ int initTalents()
         t_disguiseModif[i]->value = i;
 
         t_escapeModif[i] = new Talent();
-        t_escapeModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_escapeModif[i]->name,"Escape modificator ");
         strcat(t_escapeModif[i]->name,value);
         t_escapeModif[i]->description = (char*)"Modify escape";
@@ -222,7 +212,6 @@ int initTalents()
         t_escapeModif[i]->value = i;
 
         t_flyModif[i] = new Talent();
-        t_flyModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_flyModif[i]->name,"Fly modificator ");
         strcat(t_flyModif[i]->name,value);
         t_flyModif[i]->description = (char*)"Modify fly";
@@ -230,7 +219,6 @@ int initTalents()
         t_flyModif[i]->value = i;
 
         t_handleAnimalModif[i] = new Talent();
-        t_handleAnimalModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_handleAnimalModif[i]->name,"HandleAnimal modificator ");
         strcat(t_handleAnimalModif[i]->name,value);
         t_handleAnimalModif[i]->description = (char*)"Modify handleAnimal";
@@ -238,7 +226,6 @@ int initTalents()
         t_handleAnimalModif[i]->value = i;
 
         t_healModif[i] = new Talent();
-        t_healModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_healModif[i]->name,"Heal modificator ");
         strcat(t_healModif[i]->name,value);
         t_healModif[i]->description = (char*)"Modify heal";
@@ -246,7 +233,6 @@ int initTalents()
         t_healModif[i]->value = i;
 
         t_intimidateModif[i] = new Talent();
-        t_intimidateModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_intimidateModif[i]->name,"Intimidate modificator ");
         strcat(t_intimidateModif[i]->name,value);
         t_intimidateModif[i]->description = (char*)"Modify intimidate";
@@ -254,7 +240,6 @@ int initTalents()
         t_intimidateModif[i]->value = i;
 
         t_knowledgeModif[i] = new Talent();
-        t_knowledgeModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_knowledgeModif[i]->name,"Knowledge modificator ");
         strcat(t_knowledgeModif[i]->name,value);
         t_knowledgeModif[i]->description = (char*)"Modify knowledge";
@@ -262,7 +247,6 @@ int initTalents()
         t_knowledgeModif[i]->value = i;
 
         t_linguisticsModif[i] = new Talent();
-        t_linguisticsModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_linguisticsModif[i]->name,"Linguistics modificator ");
         strcat(t_linguisticsModif[i]->name,value);
         t_linguisticsModif[i]->description = (char*)"Modify linguistics";
@@ -270,7 +254,6 @@ int initTalents()
         t_linguisticsModif[i]->value = i;
 
         t_perceptionModif[i] = new Talent();
-        t_perceptionModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_perceptionModif[i]->name,"Perception modificator ");
         strcat(t_perceptionModif[i]->name,value);
         t_perceptionModif[i]->description = (char*)"Modify perception";
@@ -278,7 +261,6 @@ int initTalents()
         t_perceptionModif[i]->value = i;
 
         t_performModif[i] = new Talent();
-        t_performModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_performModif[i]->name,"Perform modificator ");
         strcat(t_performModif[i]->name,value);
         t_performModif[i]->description = (char*)"Modify perform";
@@ -286,7 +268,6 @@ int initTalents()
         t_performModif[i]->value = i;
 
         t_professionModif[i] = new Talent();
-        t_professionModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_professionModif[i]->name,"Profession modificator ");
         strcat(t_professionModif[i]->name,value);
         t_professionModif[i]->description = (char*)"Modify profession";
@@ -294,7 +275,6 @@ int initTalents()
         t_professionModif[i]->value = i;
 
         t_rideModif[i] = new Talent();
-        t_rideModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_rideModif[i]->name,"Ride modificator ");
         strcat(t_rideModif[i]->name,value);
         t_rideModif[i]->description = (char*)"Modify ride";
@@ -302,7 +282,6 @@ int initTalents()
         t_rideModif[i]->value = i;
 
         t_senseMotiveModif[i] = new Talent();
-        t_senseMotiveModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_senseMotiveModif[i]->name,"SenseMotive modificator ");
         strcat(t_senseMotiveModif[i]->name,value);
         t_senseMotiveModif[i]->description = (char*)"Modify senseMotive";
@@ -310,7 +289,6 @@ int initTalents()
         t_senseMotiveModif[i]->value = i;
 
         t_sleightOfHandModif[i] = new Talent();
-        t_sleightOfHandModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_sleightOfHandModif[i]->name,"SleightOfHand modificator ");
         strcat(t_sleightOfHandModif[i]->name,value);
         t_sleightOfHandModif[i]->description = (char*)"Modify sleightOfHand";
@@ -318,7 +296,6 @@ int initTalents()
         t_sleightOfHandModif[i]->value = i;
 
         t_spellCraftModif[i] = new Talent();
-        t_spellCraftModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_spellCraftModif[i]->name,"SpellCraft modificator ");
         strcat(t_spellCraftModif[i]->name,value);
         t_spellCraftModif[i]->description = (char*)"Modify spellCraft";
@@ -326,7 +303,6 @@ int initTalents()
         t_spellCraftModif[i]->value = i;
 
         t_stealthModif[i] = new Talent();
-        t_stealthModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_stealthModif[i]->name,"Stealth modificator ");
         strcat(t_stealthModif[i]->name,value);
         t_stealthModif[i]->description = (char*)"Modify stealth";
@@ -334,7 +310,6 @@ int initTalents()
         t_stealthModif[i]->value = i;
 
         t_survivalModif[i] = new Talent();
-        t_survivalModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_survivalModif[i]->name,"Survival modificator ");
         strcat(t_survivalModif[i]->name,value);
         t_survivalModif[i]->description = (char*)"Modify survival";
@@ -342,7 +317,6 @@ int initTalents()
         t_survivalModif[i]->value = i;
 
         t_swimModif[i] = new Talent();
-        t_swimModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_swimModif[i]->name,"Swim modificator ");
         strcat(t_swimModif[i]->name,value);
         t_swimModif[i]->description = (char*)"Modify swim";
@@ -350,7 +324,6 @@ int initTalents()
         t_swimModif[i]->value = i;
 
         t_umdModif[i] = new Talent();
-        t_umdModif[i]->name = (char*)malloc(sizeof(char)*64);
         strcpy(t_umdModif[i]->name,"UseMagicDevice modificator ");
         strcat(t_umdModif[i]->name,value);
         t_umdModif[i]->description = (char*)"Modify useMagicDevice";
@@ -371,7 +344,7 @@ int initSkills()
     acrobatics->ability = DEXTERITY;
 
     Competence* appraise = new Competence();
-    appraise->name = (char*)"appraise";
+    appraise->name = (char*)"Appraise";
     appraise->description = (char*)"Appraise skill";
     appraise->ability = INTELLIGENCE;
 
@@ -541,4 +514,134 @@ int initFeats()
     sureFooted->addTalent(Talent::getTalentByName("Climb modificator 2"));
 
     return 0;
+}
+
+int initClasses ()
+{
+    Classe* roublard = new Classe();
+    roublard->name = (char*)"Roublard";
+    roublard->description = (char*)"Classe de roublard";
+    setBab(roublard->bab,1);
+    setSt(roublard->reflexe,1);
+    setSt(roublard->vigueur,0);
+    setSt(roublard->volonte,0);
+    roublard->dv = 8;
+    roublard->addSkillByName("Acrobatics");
+    roublard->addSkillByName("Appraise");
+    roublard->addSkillByName("Bluff");
+    roublard->addSkillByName("Climb");
+    roublard->addSkillByName("Craft");
+    roublard->addSkillByName("Diplomacy");
+    roublard->addSkillByName("Disable Device");
+    roublard->addSkillByName("Disguise");
+    roublard->addSkillByName("Escape");
+    roublard->addSkillByName("Knowledge");
+    roublard->addSkillByName("Linguistics");
+    roublard->addSkillByName("Perception");
+    roublard->addSkillByName("Perform");
+    roublard->addSkillByName("Profession");
+    roublard->addSkillByName("Sense Motive");
+    roublard->addSkillByName("Sleight of Hand");
+    roublard->addSkillByName("Stealth");
+    roublard->addSkillByName("Swim");
+    roublard->addSkillByName("Use Magic Device");
+    roublard->addSkillByName("Acrobatics");
+    roublard->addSkillByName("Acrobatics");
+
+    int i = 0;
+    printf("bab : ");
+    for(i=0;i<20;i++)
+    {
+        printf("%d ",roublard->bab[i]);
+    }
+    printf("\nreflexe : ");
+    for(i=0;i<20;i++)
+    {
+        printf("%d ",roublard->reflexe[i]);
+    }
+    printf("\nvolonte : ");
+    for(i=0;i<20;i++)
+    {
+        printf("%d ",roublard->volonte[i]);
+    }
+    printf("\nvigueur : ");
+    for(i=0;i<20;i++)
+    {
+        printf("%d ",roublard->vigueur[i]);
+    }
+    printf("\skills : ");
+    for(i=0;i<20;i++)
+    {
+        printf("%d ",roublard->skills[i]);
+    }
+    return 0;
+}
+
+void setSt(int* t, int v) // v = 0(low) ou 1(high)
+{
+    int i = 0;
+    if(v == 0)
+    {
+        for(i=0; i<20; i++)
+        {
+            t[i] = (i+1)/3;
+        }
+    }
+    else if(v == 1)
+    {
+        for(i=0; i<20; i++)
+        {
+            t[i] = 2 + (i+1)/2;
+        }
+    }
+    else
+    {
+        printf("error setSt\n");
+    }
+}
+
+void setBab(int* t, int v) // v = 0/1/2 low/medium/high
+{
+    int i = 0;
+    if(v == 0)
+    {
+        for(i = 0; i < 20; i++)
+        {
+            t[i] = (i+1)/2;
+        }
+    }
+    else if(v == 1)
+    {
+        int value = 0;
+        bool b = false;
+
+        for(i = 0; i < 20; i++)
+        {
+            if(value%3 == 0 && !b)
+            {
+                b = true;
+            }
+            else if(value%3 == 0 && b)
+            {
+                b = false;
+                value++;
+            }
+            else
+            {
+              value++;
+            }
+            t[i] = value;
+        }
+    }
+    else if(v == 2)
+    {
+        for(i = 0; i < 20; i++)
+        {
+            t[i] = i+1;
+        }
+    }
+    else
+    {
+        printf("error setBab\n");
+    }
 }

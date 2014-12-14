@@ -25,7 +25,8 @@ using namespace std;
    */
 #define TEST_INIT true
 #define TEST_CAMPAGNE false
-#define TEST_BDD true
+#define TEST_BDD false
+#define CREATE_CHARACTER false
 
 #define NB_ZONES 2
 #define TAILLE_ZONE_X 10
@@ -87,6 +88,10 @@ int main()
     {
         if (init_test_campagne()!=0)
             return 1;
+    }
+    if(CREATE_CHARACTER)
+    {
+        newCharacter();
     }
 
     return 0;
@@ -227,14 +232,17 @@ int init_test_skills_feats_races()
 {
         int r = 0;
         r += initSkills();
-        r += test_init_skills();
+        int i = 0;
+
+        //r += test_init_skills();
         r += initTalents();
         r += test_init_talents();
         r += initFeats();
-        r += test_init_feats();
+        //r += test_init_feats();
         r += initRaces();
-        r += test_init_races();
-
+        //r += test_init_races();
+        r += initClasses();
+        //r += test_init_classes();
         printf("r = %d\n", r);
         return 0;
 }
@@ -649,16 +657,36 @@ void mort(PNJScenario* npc) {
 
 Personnage* newCharacter()
 {
+    printf("newCharacter..\n");
+
+    char* firstName = (char*)(malloc(sizeof(char)*50));
+    char* lastName = (char*)(malloc(sizeof(char)*50));
     char* race = (char*)(malloc(sizeof(char)*50));
     char* classe = (char*)(malloc(sizeof(char)*50));
     char* bonus = NULL;
+    int r = -1;
     int abilities[6];
+    printf("ici\n");
+    Personnage* character = new Personnage();
 
-    Personnage* newCharacter = new Personnage();
+    printf("FirstName ?\n");
+    scanf("%s", firstName);
+    character->setFirstName(firstName);
 
-    printf("Classe ?\n");
-    scanf("%s", classe);
-    newCharacter->setClasse(classe);
+    printf("LastName ?\n");
+    scanf("%s", lastName);
+    character->setLastName(lastName);
+
+    printf("Le personnage s'appelle %s %s\n", character->getFirstName(), character->getLastName());
+
+    while (r != 0)
+    {
+        printf("Classe ?\n");
+        scanf("%s", classe);
+        r = character->setClasse(classe);
+    }
+
+
     printf("Strength ?\n");
     scanf("%d", &abilities[0]);
     printf("Dexterity ?\n");
@@ -671,7 +699,8 @@ Personnage* newCharacter()
     scanf("%d", &abilities[4]);
     printf("Charisma ?\n");
     scanf("%d", &abilities[5]);
-    newCharacter->setAbilities(NULL,abilities);
+    character->setAbilities(NULL,abilities);
+
     printf("Skills are not implemented yet\n");
     printf("Race ?\n");
     scanf("%s", race);
@@ -681,12 +710,12 @@ Personnage* newCharacter()
         printf("Bonus ?\n");
         scanf("%s", bonus);
     }
-    newCharacter->setRace(race,bonus);
+    character->setRace(race,bonus);
     printf("Feats are not implemented yet\n");
 
     free(race);
     free(classe);
 
     printf("Fin !");
-    return newCharacter;
+    return character;
 }

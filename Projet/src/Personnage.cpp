@@ -2,6 +2,7 @@
 #include <string>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 Personnage::Personnage()
 {
@@ -264,9 +265,11 @@ Classe Personnage::getClasse()
 int Personnage::setClasse(char* newClasse)
 {
     int i;
+    printf("setClasse char, nbClasses = %d\n", Classe::nbClasses);
     for(i=0; i<Classe::nbClasses; i++)
     {
-        if(strcmp(newClasse,Classe::listClasses[i].getName()))
+        printf("%s\n", Classe::listClasses[i].name);
+        if(strcmp(newClasse,Classe::listClasses[i].name))
         {
             return this->setClasse(Classe::listClasses[i]);
         }

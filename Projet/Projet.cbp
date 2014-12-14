@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\Projet" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/Projet" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,12 +16,12 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add library="H:\Users\Administrator\Desktop\CodeBlocks\MinGW\lib\libmysqlclient.a" />
+					<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libmysqlclient.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\Projet" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/Projet" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -30,7 +30,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="H:\Users\Administrator\Desktop\CodeBlocks\MinGW\lib\libmysqlclient.a" />
+					<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libmysqlclient.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -39,57 +39,57 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
-			<Add library="H:\Users\Administrator\Desktop\CodeBlocks\MinGW\lib\libmysqlclient.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libmysqlclient.a" />
 		</Linker>
-		<Unit filename="include\Area.h" />
-		<Unit filename="include\Bonus.h" />
-		<Unit filename="include\Cell.h" />
-		<Unit filename="include\Classe.h" />
-		<Unit filename="include\Competence.h" />
-		<Unit filename="include\Discussion.h" />
-		<Unit filename="include\Evolution.h" />
-		<Unit filename="include\Feat.h" />
-		<Unit filename="include\FeatTalent.h" />
-		<Unit filename="include\Guard.h" />
-		<Unit filename="include\Inventaire.h" />
-		<Unit filename="include\Loot.h" />
-		<Unit filename="include\Monstre.h" />
-		<Unit filename="include\Objet.h" />
-		<Unit filename="include\PNJ.h" />
-		<Unit filename="include\Personnage.h" />
-		<Unit filename="include\PersonnageScenario.h" />
-		<Unit filename="include\Race.h" />
-		<Unit filename="include\RaceFeat.h" />
-		<Unit filename="include\Scenario.h" />
-		<Unit filename="include\Talent.h" />
-		<Unit filename="include\Utilisateur.h" />
-		<Unit filename="include\init.h" />
-		<Unit filename="include\test_init.h" />
+		<Unit filename="include/Area.h" />
+		<Unit filename="include/Bonus.h" />
+		<Unit filename="include/Cell.h" />
+		<Unit filename="include/Classe.h" />
+		<Unit filename="include/Competence.h" />
+		<Unit filename="include/Discussion.h" />
+		<Unit filename="include/Evolution.h" />
+		<Unit filename="include/Feat.h" />
+		<Unit filename="include/FeatTalent.h" />
+		<Unit filename="include/Guard.h" />
+		<Unit filename="include/Inventaire.h" />
+		<Unit filename="include/Loot.h" />
+		<Unit filename="include/Monstre.h" />
+		<Unit filename="include/Objet.h" />
+		<Unit filename="include/PNJ.h" />
+		<Unit filename="include/Personnage.h" />
+		<Unit filename="include/PersonnageScenario.h" />
+		<Unit filename="include/Race.h" />
+		<Unit filename="include/RaceFeat.h" />
+		<Unit filename="include/Scenario.h" />
+		<Unit filename="include/Talent.h" />
+		<Unit filename="include/Utilisateur.h" />
+		<Unit filename="include/init.h" />
+		<Unit filename="include/test_init.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src\Area.cpp" />
-		<Unit filename="src\Bonus.cpp" />
-		<Unit filename="src\Cell.cpp" />
-		<Unit filename="src\Classe.cpp" />
-		<Unit filename="src\Competence.cpp" />
-		<Unit filename="src\Discussion.cpp" />
-		<Unit filename="src\Evolution.cpp" />
-		<Unit filename="src\Feat.cpp" />
-		<Unit filename="src\FeatTalent.cpp" />
-		<Unit filename="src\Guard.cpp" />
-		<Unit filename="src\Inventaire.cpp" />
-		<Unit filename="src\Loot.cpp" />
-		<Unit filename="src\Monstre.cpp" />
-		<Unit filename="src\Objet.cpp" />
-		<Unit filename="src\PNJ.cpp" />
-		<Unit filename="src\Personnage.cpp" />
-		<Unit filename="src\PersonnageScenario.cpp" />
-		<Unit filename="src\Race.cpp" />
-		<Unit filename="src\RaceFeat.cpp" />
-		<Unit filename="src\Scenario.cpp" />
-		<Unit filename="src\Talent.cpp" />
-		<Unit filename="src\Utilisateur.cpp" />
-		<Unit filename="src\init.cpp" />
-		<Unit filename="src\test_init.cpp" />
+		<Unit filename="src/Area.cpp" />
+		<Unit filename="src/Bonus.cpp" />
+		<Unit filename="src/Cell.cpp" />
+		<Unit filename="src/Classe.cpp" />
+		<Unit filename="src/Competence.cpp" />
+		<Unit filename="src/Discussion.cpp" />
+		<Unit filename="src/Evolution.cpp" />
+		<Unit filename="src/Feat.cpp" />
+		<Unit filename="src/FeatTalent.cpp" />
+		<Unit filename="src/Guard.cpp" />
+		<Unit filename="src/Inventaire.cpp" />
+		<Unit filename="src/Loot.cpp" />
+		<Unit filename="src/Monstre.cpp" />
+		<Unit filename="src/Objet.cpp" />
+		<Unit filename="src/PNJ.cpp" />
+		<Unit filename="src/Personnage.cpp" />
+		<Unit filename="src/PersonnageScenario.cpp" />
+		<Unit filename="src/Race.cpp" />
+		<Unit filename="src/RaceFeat.cpp" />
+		<Unit filename="src/Scenario.cpp" />
+		<Unit filename="src/Talent.cpp" />
+		<Unit filename="src/Utilisateur.cpp" />
+		<Unit filename="src/init.cpp" />
+		<Unit filename="src/test_init.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

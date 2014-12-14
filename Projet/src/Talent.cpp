@@ -9,9 +9,9 @@ Talent** Talent::listTalents = (Talent**)(malloc(sizeof(Talent*)*3000));
 Talent::Talent()
 {
     Talent::listTalents[Talent::nbTalents] = this;
+    this->name = (char*)malloc(sizeof(char)*128);
+    this->description = (char*)malloc(sizeof(char)*1024);
     this->id = nbTalents;
-    this->name = (char*)"default name";
-    this->description = (char*)"default description";
     this->type = 0;
     this->value = 0;
     Talent::nbTalents++;

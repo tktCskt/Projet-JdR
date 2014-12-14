@@ -1,43 +1,43 @@
 #ifndef CLASSE_H
 #define CLASSE_H
 #include "evolution.h"
+#include "Feat.h"
 #include <iostream>
 #include <string>
+
+#define LOW_BAB {0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10}
+#define MEDIUM_BAB {0,1,2,3,3,4,5,6,6,7,8,9,9,10,11,12,12,13,14,15}
+#define HIGH_BAB {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+
+
 class Classe
 {
     public:
         Classe();
         virtual ~Classe();
-       char* getName();
-       char* getDescription();
-       int getDv();
-       int getGain_comp();
-       int getReq_niv();
-       void setReq_niv(int r);
-       void setName(char* n);
-       void setDescription(char* desc);
-       void setDv( int d);
-       void setGain_comp(int g);
 
-       static int nbClasses;
-       static Classe* listClasses;
+        static int nbClasses;
+        static Classe* listClasses;
+        char* name;
+        char* description;
+        int dv;
+        int* bab;
+        int* reflexe;
+        int* volonte;
+        int* vigueur;
+        Feat** dons[20];
+        bool* skills;
+
+        int addSkillByName(char*);
     protected:
     private:
-    int iD_classe;
-    char* name;
-    char* description;
-    int** table_bba;  // variable globale (haute, moyenne, faible) bonus
-    int table_jet_ref[20];// variable globale (haute, moyenne, faible) reflexe
-    int table_jet_vol[20];// variable globale (haute, moyenne, faible) volonte
-    int table_jet_vig[20];// variable globale (haute, moyenne, faible) vigueur
-    int table_talent[20];// niveau, id_talent
-    int dv;
-    int req_niv;
-    int** table_race_req; // id_race
-    char* table_alignement[];
+    int id;
+
+
+
+    int table_talent[20];
     int table_competence[300][300]; // id_competence, point
     int gain_comp;
-    int table_competence_de_classe[300];// id_competence
 };
 
 #endif // CLASSE_H
